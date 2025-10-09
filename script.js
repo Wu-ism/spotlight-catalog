@@ -360,7 +360,7 @@ function renderProductCard(product) {
         <div class="product-card" data-sku="${product.sku}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
-                <button class="use-cases-btn" data-sku="${product.sku}" data-action="use-cases" title="See Use Cases">📷</button>
+                <button class="use-cases-btn" data-sku="${product.sku}" data-action="use-cases" title="See Use Cases">Use Cases</button>
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
