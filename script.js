@@ -500,138 +500,8 @@ function loadCartFromStorage() {
 // Search Functionality
 document.addEventListener('DOMContentLoaded', function() {
     console.log('DOMContentLoaded event fired on GitHub Pages');
-    const searchInput = document.getElementById('searchInput');
     const categories = document.querySelectorAll('.category');
 
-    // Search functionality with highlighting
-    function performSearch() {
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        
-        categories.forEach(category => {
-            const categoryProducts = category.querySelectorAll('.product-card');
-            let hasVisibleProducts = false;
-
-            categoryProducts.forEach(card => {
-                const nameElement = card.querySelector('.product-name');
-                const skuElement = card.querySelector('.product-sku');
-                const descElement = card.querySelector('.product-description');
-                const compatibilityElement = card.querySelector('.compatibility-label');
-                
-                const productName = nameElement.textContent.toLowerCase();
-                const productSku = skuElement.textContent.toLowerCase();
-                const productDescription = descElement.textContent.toLowerCase();
-                const productCompatibility = compatibilityElement ? compatibilityElement.textContent.toLowerCase() : '';
-
-                const matchesSearch = searchTerm === '' || 
-                    productName.includes(searchTerm) || 
-                    productSku.includes(searchTerm) || 
-                    productDescription.includes(searchTerm) ||
-                    productCompatibility.includes(searchTerm);
-
-                if (matchesSearch) {
-                    card.style.display = 'block';
-                    hasVisibleProducts = true;
-                    
-                    // Add highlighting if there's a search term
-                    if (searchTerm) {
-                        nameElement.innerHTML = highlightText(nameElement.textContent, searchTerm);
-                        skuElement.innerHTML = highlightText(skuElement.textContent, searchTerm);
-                        descElement.innerHTML = highlightText(descElement.textContent, searchTerm);
-                        if (compatibilityElement) {
-                            compatibilityElement.innerHTML = highlightText(compatibilityElement.textContent, searchTerm);
-                        }
-                    } else {
-                        // Remove highlighting
-                        nameElement.innerHTML = nameElement.textContent;
-                        skuElement.innerHTML = skuElement.textContent;
-                        descElement.innerHTML = descElement.textContent;
-                        if (compatibilityElement) {
-                            compatibilityElement.innerHTML = compatibilityElement.textContent;
-                        }
-                    }
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-
-            // Show/hide category based on visible products
-            if (hasVisibleProducts) {
-                category.style.display = 'block';
-            } else {
-                category.style.display = 'none';
-            }
-        });
-    }
-
-    function highlightText(text, searchTerm) {
-        if (!searchTerm) return text;
-        const regex = new RegExp(`(${searchTerm})`, 'gi');
-        return text.replace(regex, '<mark>$1</mark>');
-    }
-
-    // Search input functionality
-    searchInput.addEventListener('input', function() {
-        performSearch();
-    });
-
-    // Clear search functionality
-    function clearSearch() {
-        searchInput.value = '';
-        performSearch();
-    }
-
-    // Add clear search button
-    const searchBar = document.querySelector('.search-bar');
-    const clearButton = document.createElement('button');
-    clearButton.innerHTML = '✕';
-    clearButton.className = 'clear-search-btn';
-    clearButton.style.cssText = `
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        background: none;
-        border: none;
-        font-size: 18px;
-        color: #999;
-        cursor: pointer;
-        padding: 5px;
-        display: none;
-    `;
-    
-    // Make search bar relative positioned
-    searchBar.style.position = 'relative';
-    searchBar.appendChild(clearButton);
-
-    // Show/hide clear button based on input
-    searchInput.addEventListener('input', function() {
-        if (this.value.trim() !== '') {
-            clearButton.style.display = 'block';
-        } else {
-            clearButton.style.display = 'none';
-        }
-    });
-
-    // Clear search when clear button is clicked
-    clearButton.addEventListener('click', function() {
-        clearSearch();
-        clearButton.style.display = 'none';
-    });
-
-    // Keyboard shortcuts
-    document.addEventListener('keydown', function(e) {
-        // Escape key to clear search
-        if (e.key === 'Escape' && searchInput === document.activeElement) {
-            clearSearch();
-            clearButton.style.display = 'none';
-        }
-        
-        // Ctrl/Cmd + K to focus search
-        if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-            e.preventDefault();
-            searchInput.focus();
-        }
-    });
 
     // Product card hover effects - moved to after products are rendered
     function initProductCardHoverEffects() {
@@ -681,8 +551,6 @@ document.addEventListener('DOMContentLoaded', function() {
             // Initialize event delegation
             initEventDelegation();
             
-            // Perform initial search
-            performSearch();
         }, 50);
         } catch (error) {
             console.error('Error during initialization:', error);
@@ -692,14 +560,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize everything after DOM is ready
     // init(); // Moved to DOMContentLoaded event
 
-    // Enhanced search with debouncing
-    let searchTimeout;
-    searchInput.addEventListener('input', function() {
-        clearTimeout(searchTimeout);
-        searchTimeout = setTimeout(() => {
-            performSearch();
-        }, 300);
-    });
     
     // Modal event listeners
     const modal = document.getElementById('checkoutModal');
@@ -748,13 +608,27 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Scroll to top functionality
     const scrollToTopBtn = document.getElementById('scrollToTop');
+    const shoppingCart = document.getElementById('shoppingCart');
+    let cartOriginalPosition = null;
     
-    // Show/hide scroll to top button based on scroll position
+    // Show/hide scroll to top button and handle cart sticky behavior
     window.addEventListener('scroll', function() {
+        // Scroll to top button
         if (window.pageYOffset > 300) {
             scrollToTopBtn.classList.add('show');
         } else {
             scrollToTopBtn.classList.remove('show');
+        }
+        
+        // Cart sticky behavior
+        if (!cartOriginalPosition) {
+            cartOriginalPosition = shoppingCart.offsetTop;
+        }
+        
+        if (window.pageYOffset > cartOriginalPosition - 20) {
+            shoppingCart.classList.add('sticky');
+        } else {
+            shoppingCart.classList.remove('sticky');
         }
     });
     

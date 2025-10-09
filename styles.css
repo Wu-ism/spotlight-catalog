@@ -72,26 +72,6 @@ body {
     width: 100%;
 }
 
-/* Search Bar */
-.search-bar {
-    margin: 2rem 0;
-    text-align: center;
-}
-
-.search-input {
-    width: 100%;
-    max-width: 500px;
-    padding: 1rem;
-    border: 2px solid #e0e0e0;
-    border-radius: 25px;
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
-
-.search-input:focus {
-    border-color: #667eea;
-}
 
 /* Filter Buttons */
 .filter-buttons {
@@ -222,10 +202,24 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-top: 40px; /* Position lower than header title */
     margin-bottom: 30px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.shopping-cart.sticky {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 700px; /* Doubled from 350px */
+    max-width: 700px; /* Doubled from 350px */
+    z-index: 1000;
+    margin: 0;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 }
 
 .cart-header {
@@ -631,6 +625,11 @@ body {
         margin-bottom: 20px;
     }
     
+    .shopping-cart.sticky {
+        width: 600px; /* Doubled from 300px */
+        right: 10px;
+    }
+    
     .cart-items {
         max-height: 250px;
     }
@@ -933,10 +932,6 @@ mark {
         padding: 1.5rem 0;
     }
     
-    .search-input {
-        padding: 0.75rem;
-        font-size: 0.9rem;
-    }
     
     .filter-btn, .size-filter-btn {
         padding: 0.4rem 0.8rem;
