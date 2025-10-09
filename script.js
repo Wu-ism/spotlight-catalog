@@ -859,7 +859,11 @@ function showUseCases(sku) {
 function getUseCaseImages(sku) {
     // This function would ideally be dynamic, but for now we'll hardcode the known images
     const useCaseImageMap = {
-        '20.2223.7': ['images/use-case/20.2223.7-use-case.jpg'],
+        '20.2223.7': [
+            'images/use-case/20.2223.7-use-case (1).jpg',
+            'images/use-case/20.2223.7-use-case (2).jpg',
+            'images/use-case/20.2223.7-use-case (3).jpg'
+        ],
         '79.0014.5': [
             'images/use-case/79.0014.5-use-case (1).jpg',
             'images/use-case/79.0014.5-use-case (3).jpg',
