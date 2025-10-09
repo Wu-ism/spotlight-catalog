@@ -632,6 +632,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
+    
     // Scroll to top when button is clicked
     scrollToTopBtn.addEventListener('click', function() {
         window.scrollTo({
@@ -639,6 +640,7 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
         });
     });
+    
     
     // Initialize the application
     init();

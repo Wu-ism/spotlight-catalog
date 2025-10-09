@@ -214,8 +214,7 @@ body {
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 700px; /* Doubled from 350px */
-    max-width: 700px; /* Doubled from 350px */
+    width: 400px; /* Fixed width */
     z-index: 1000;
     margin: 0;
     max-height: calc(100vh - 40px);
@@ -633,7 +632,7 @@ body {
     }
     
     .shopping-cart.sticky {
-        width: 600px; /* Doubled from 300px */
+        width: 350px; /* Fixed width on mobile */
         right: 10px;
     }
     
