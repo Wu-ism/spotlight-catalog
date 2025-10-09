@@ -23,7 +23,10 @@
         <div class="shopping-cart" id="shoppingCart">
             <div class="cart-header">
                 <h3>🛒 Shopping Cart</h3>
-                <button class="cart-toggle" onclick="toggleCart()">Toggle Cart</button>
+                <div class="cart-actions">
+                    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                </div>
             </div>
             <div class="cart-content" id="cartContent">
                 <div class="cart-items" id="cartItems">
@@ -31,10 +34,6 @@
                 </div>
                 <div class="cart-total" id="cartTotal">
                     <strong>Items: 0</strong>
-                </div>
-                <div class="cart-actions">
-                    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
                 </div>
             </div>
         </div>
@@ -71,12 +70,68 @@
             </div>
         </div>
 
-        <!-- Accessories & Mounting -->
-        <div class="category" data-category="accessories">
-            <div class="category-header">Accessories & Mounting</div>
+        <!-- Pressure Clamps -->
+        <div class="category" data-category="pressure-clamps">
+            <div class="category-header">Pressure Clamps</div>
             <div class="products-grid">
                 <!-- Products will be dynamically rendered here -->
             </div>
+        </div>
+
+        <!-- Accessories & Mounting -->
+        <div class="category" data-category="accessories">
+            <div class="category-header">Other Mounting Fixtures</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- Replacement Parts -->
+        <div class="category" data-category="replacement-parts">
+            <div class="category-header">Replacement Parts</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Form Modal -->
+    <div id="checkoutModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Fixture Request Form</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="customerName">Customer Name *</label>
+                    <input type="text" id="customerName" name="customerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email Address *</label>
+                    <input type="email" id="customerEmail" name="customerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyName">Company Name</label>
+                    <input type="text" id="companyName" name="companyName">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber">
+                </div>
+                <div class="form-group">
+                    <label for="shippingAddress">Shipping Address *</label>
+                    <textarea id="shippingAddress" name="shippingAddress" rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="specialInstructions">Special Instructions</label>
+                    <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special delivery instructions or notes..."></textarea>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="cancelCheckout" class="btn-cancel">Cancel</button>
+                    <button type="submit" id="submitCheckout" class="btn-submit">Send Request</button>
+                </div>
+            </form>
         </div>
     </div>
 
