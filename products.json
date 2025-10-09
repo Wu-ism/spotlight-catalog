@@ -1,0 +1,311 @@
+{
+  "products": [
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.5",
+      "description": "Landscape - 75 degree tilt - C29ZV White",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/79.0014.5.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.8",
+      "description": "Landscape - 75 degree tilt - C29ZB Black",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/79.0014.8.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "79.0140.1",
+      "description": "Landscape - C29ZV White",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/79.0140.1.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Wall Holder",
+      "sku": "79.0014.24",
+      "description": "Landscape - C29ZV White",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/79.0014.24.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.19",
+      "description": "Landscape - 60 degrees - C29ZV White",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/79.0014.19.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Shelf Rail Mount",
+      "sku": "28.0488.2",
+      "description": "C29ZV White / C29ZB Black",
+      "compatibility": "2.9\" & 4.2\" Labels (White & Black)",
+      "image": "images/28.0488.2.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Mounting Rail Universal",
+      "sku": "28.0487.254",
+      "description": "Clear double sided Remo Tape - C29ZV White / C29ZB Black",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/28.0487.254.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Hook Over Rail Mount",
+      "sku": "28.0487.345",
+      "description": "C29ZV White / C29ZB Black",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/28.0487.345.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Custom Label Holder w/Clips",
+      "sku": "73.0023.4",
+      "description": "Includes clips - C29ZV White / C29ZB Black",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/73.0023.4.png",
+      "category": "29-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.20",
+      "description": "Landscape - 60 degree tilt - C42ZV White",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/79.0014.20.png",
+      "category": "42-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.14",
+      "description": "Landscape - C42ZV White / C42ZB Black",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/79.0014.14.png",
+      "category": "42-labels"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "79.0140.2",
+      "description": "Landscape - C42ZV White",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/79.0140.2.png",
+      "category": "42-labels"
+    },
+    {
+      "name": "Wall Holder",
+      "sku": "79.0014.25",
+      "description": "Landscape - C42ZV White / C42ZB Black",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/79.0014.25.png",
+      "category": "42-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.16",
+      "description": "Portrait - C42ZV White",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/79.0014.16.png",
+      "category": "42-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.21",
+      "description": "Portrait - 60 degree tilt - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.21.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.22",
+      "description": "Landscape - 60 degree tilt - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.22.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.4",
+      "description": "Landscape - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.4.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.6",
+      "description": "Portrait - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.6.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.12",
+      "description": "Landscape - C58ZB Black",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.12.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Sleeve Stand",
+      "sku": "79.0014.13",
+      "description": "Portrait - C58ZB Black",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.13.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "79.0140.3",
+      "description": "Portrait - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0140.3.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "79.0140.4",
+      "description": "Landscape - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0140.4.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Wall Holder",
+      "sku": "79.0014.27",
+      "description": "Landscape - C58ZV White",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.27.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Wall Holder",
+      "sku": "79.0014.26",
+      "description": "Landscape - C58ZB Black",
+      "compatibility": "5.8\" Labels (White & Black)",
+      "image": "images/79.0014.26.png",
+      "category": "58-labels"
+    },
+    {
+      "name": "Tilted Mount Stand",
+      "sku": "79.0014.18",
+      "description": "Landscape or Portrait - C102ZV White / C133ZV White",
+      "compatibility": "10.2\" & 13.3\" Labels (White)",
+      "image": "images/79.0014.18.png",
+      "category": "102-133-labels"
+    },
+    {
+      "name": "Magnetic Holder",
+      "sku": "73.0023.3",
+      "description": "Includes 53.0056.60 adhesive plate",
+      "compatibility": "All Sizes",
+      "image": "images/73.0023.3.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Dovetail Adhesive Plate",
+      "sku": "53.0056.60",
+      "description": "Dovetail Adhesive Plate - only - for C42ZV White",
+      "compatibility": "4.2\" Labels (White & Black)",
+      "image": "images/53.0056.60.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Foam Tape",
+      "sku": "20.2223.7",
+      "description": "Foam Tape - only",
+      "compatibility": "All Sizes",
+      "image": "images/Foam Tape - DBL Sided.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Universal Rail with foam tape",
+      "sku": "28.0487.248",
+      "description": "Foam Tape - only",
+      "compatibility": "All Sizes",
+      "image": "images/28.0487.248.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Peg Hook Adapter",
+      "sku": "28.0174.29",
+      "description": "Peg Hook Adaptor for Z Label \"adjustable\"",
+      "compatibility": "All Sizes",
+      "image": "images/28.0174.29.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Hinge Pressure Clamp",
+      "sku": "73.0023.1",
+      "description": "Includes 53.0056.60 adhesive plate - C29ZV White/C29ZB Black, C42ZV White/C42ZB Black, C58ZV White/C58ZB Black (2x recommended)",
+      "compatibility": "2.9\", 4.2\" & 5.8\" Labels (White & Black)",
+      "image": "images/73.0023.1.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Hinge Pressure Clamp",
+      "sku": "53.0056.9",
+      "description": "Clamp - only",
+      "compatibility": "All Sizes",
+      "image": "images/TBD.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "73.0023.2",
+      "description": "Includes 53.0056.60 adhesive plate - C29ZV White/C29ZB Black",
+      "compatibility": "2.9\" Labels (White & Black)",
+      "image": "images/73.0023.2.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Pressure Clamp",
+      "sku": "53.0056.23",
+      "description": "Clamp - only",
+      "compatibility": "All Sizes",
+      "image": "images/TBD.png",
+      "category": "accessories"
+    },
+    {
+      "name": "Battery Pack",
+      "sku": "70.0006.6",
+      "description": "4x CR2430 battery pack for 5.8\", 10.2\" & 13.3\" labels",
+      "compatibility": "5.8\", 10.2\" & 13.3\" Labels (White)",
+      "image": "images/70.0006.6.png",
+      "category": "accessories"
+    }
+  ],
+  "categories": {
+    "29-labels": {
+      "name": "2.9\" Labels",
+      "description": "C29ZV White/C29ZB Black",
+      "order": 1
+    },
+    "42-labels": {
+      "name": "4.2\" Labels", 
+      "description": "C42ZV White/C42ZB Black",
+      "order": 2
+    },
+    "58-labels": {
+      "name": "5.8\" Labels",
+      "description": "C58ZV White/C58ZB Black", 
+      "order": 3
+    },
+    "102-133-labels": {
+      "name": "10.2\" & 13.3\" Labels",
+      "description": "C102ZV White/C133ZV White",
+      "order": 4
+    },
+    "accessories": {
+      "name": "Accessories & Mounting",
+      "description": "Universal mounting solutions and accessories",
+      "order": 5
+    }
+  }
+}

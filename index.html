@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotlight Catalog - Label Holders & Mounting Fixtures</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>Spotlight Catalog</h1>
+            <p>Label Holders & Mounting Fixtures Collection</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" class="search-input" id="searchInput" placeholder="Search products by name, SKU, or description...">
+        </div>
+        
+        <!-- Shopping Cart -->
+        <div class="shopping-cart" id="shoppingCart">
+            <div class="cart-header">
+                <h3>🛒 Shopping Cart</h3>
+                <button class="cart-toggle" onclick="toggleCart()">Toggle Cart</button>
+            </div>
+            <div class="cart-content" id="cartContent">
+                <div class="cart-items" id="cartItems">
+                    <p class="empty-cart">Your cart is empty</p>
+                </div>
+                <div class="cart-total" id="cartTotal">
+                    <strong>Items: 0</strong>
+                </div>
+                <div class="cart-actions">
+                    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2.9" Labels (C29ZV White/C29ZB Black) -->
+        <div class="category" data-category="29-labels">
+            <div class="category-header">2.9" Labels (C29ZV White/C29ZB Black)</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- 4.2" Labels (C42ZV White/C42ZB Black) -->
+        <div class="category" data-category="42-labels">
+            <div class="category-header">4.2" Labels (C42ZV White/C42ZB Black)</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- 5.8" Labels (C58ZV White/C58ZB Black) -->
+        <div class="category" data-category="58-labels">
+            <div class="category-header">5.8" Labels (C58ZV White/C58ZB Black)</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- 10.2" & 13.3" Labels (C102ZV White/C133ZV White) -->
+        <div class="category" data-category="102-133-labels">
+            <div class="category-header">10.2" & 13.3" Labels (C102ZV White/C133ZV White)</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+
+        <!-- Accessories & Mounting -->
+        <div class="category" data-category="accessories">
+            <div class="category-header">Accessories & Mounting</div>
+            <div class="products-grid">
+                <!-- Products will be dynamically rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
