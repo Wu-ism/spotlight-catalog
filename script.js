@@ -12,7 +12,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.5",
-        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D - C29ZV White',
+        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.5.png",
         category: "29-labels",
@@ -21,7 +21,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.8",
-        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D - C29ZB Black',
+        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZB',
         image: "images/79.0014.8.png",
         category: "29-labels",
@@ -30,7 +30,7 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "79.0140.1",
-        description: 'Pressure Clamp Mount - 3.62"W × 1.81"H × 1.00"D - C29ZV White',
+        description: 'Pressure Clamp Mount - 3.62"W × 1.81"H × 1.00"D',
         compatibility: 'C29ZV',
         image: "images/79.0140.1.png",
         category: "29-labels",
@@ -39,7 +39,7 @@ const products = [
     {
         name: "Wall Holder",
         sku: "79.0014.24",
-        description: "Wall Mount Holder - 3.62"W × 1.81"H × 2.36"D - C29ZV White",
+        description: 'Wall Mount Holder - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.24.png",
         category: "29-labels",
@@ -48,7 +48,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.19",
-        description: "60° Tilted Stand - 3.62"W × 1.81"H × 2.36"D - C29ZV White",
+        description: '60° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.19.png",
         category: "29-labels",
@@ -57,7 +57,7 @@ const products = [
     {
         name: "Shelf Rail Mount",
         sku: "28.0488.2",
-        description: "Shelf Rail Mounting System - 1.00"D - C29ZV White / C29ZB Black",
+        description: 'Shelf Rail Mounting System - 1.00"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0488.2.png",
         category: "29-labels",
@@ -66,7 +66,7 @@ const products = [
     {
         name: "Mounting Rail Universal",
         sku: "28.0487.254",
-        description: "Universal Mounting Rail with Clear Double-Sided Remo Tape - 1.25"D - C29ZV White / C29ZB Black",
+        description: 'Universal Mounting Rail with Clear Double-Sided Remo Tape - 1.25"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.254.png",
         category: "29-labels",
@@ -75,7 +75,7 @@ const products = [
     {
         name: "Hook Over Rail Mount",
         sku: "28.0487.345",
-        description: "Hook Over Rail Mounting System - 1.25"D - C29ZV White / C29ZB Black",
+        description: 'Hook Over Rail Mounting System - 1.25"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.345.png",
         category: "29-labels",
@@ -84,7 +84,7 @@ const products = [
     {
         name: "Custom Label Holder w/Clips",
         sku: "73.0023.4",
-        description: "Custom Label Holder with Included Clips - 3.62"W × 1.81"H × 2.36"D - C29ZV White / C29ZB Black",
+        description: 'Custom Label Holder with Included Clips - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.4.png",
         category: "29-labels",
@@ -95,7 +95,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.20",
-        description: "60° Tilted Stand - 5.00"W × 2.50"H × 2.67"D - C42ZV White",
+        description: '60° Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV',
         image: "images/79.0014.20.png",
         category: "42-labels",
@@ -104,7 +104,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.14",
-        description: "Tilted Stand - 5.00"W × 2.50"H × 2.67"D - C42ZV White / C42ZB Black",
+        description: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.14.png",
         category: "42-labels",
@@ -113,7 +113,7 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "79.0140.2",
-        description: "Pressure Clamp Mount - 5.00"W × 2.50"H × 1.00"D - C42ZV White",
+        description: 'Pressure Clamp Mount - 5.00"W × 2.50"H × 1.00"D',
         compatibility: 'C42ZV',
         image: "images/79.0140.2.png",
         category: "42-labels",
@@ -122,7 +122,7 @@ const products = [
     {
         name: "Wall Holder",
         sku: "79.0014.25",
-        description: "Wall Mount Holder - 5.00"W × 2.50"H × 2.67"D - C42ZV White / C42ZB Black",
+        description: 'Wall Mount Holder - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.25.png",
         category: "42-labels",
@@ -131,7 +131,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.16",
-        description: "Tilted Stand - 5.00"W × 2.50"H × 2.67"D - C42ZV White",
+        description: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV',
         image: "images/79.0014.16.png",
         category: "42-labels",
@@ -142,7 +142,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.21",
-        description: "60° Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZV White",
+        description: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.21.png",
         category: "58-labels",
@@ -151,7 +151,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.22",
-        description: "60° Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZV White",
+        description: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.22.png",
         category: "58-labels",
@@ -160,7 +160,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.4",
-        description: "Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZV White",
+        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.4.png",
         category: "58-labels",
@@ -169,7 +169,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.6",
-        description: "Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZV White",
+        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.6.png",
         category: "58-labels",
@@ -178,7 +178,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.12",
-        description: "Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZB Black",
+        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.12.png",
         category: "58-labels",
@@ -187,7 +187,7 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.13",
-        description: "Tilted Stand - 7.00\"W × 3.50\"H × 3.15\"D - C58ZB Black",
+        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.13.png",
         category: "58-labels",
@@ -196,7 +196,7 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "79.0140.3",
-        description: "Pressure Clamp Mount - 7.00\"W × 3.50\"H × 1.00\"D - C58ZV White",
+        description: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
         compatibility: 'C58ZV',
         image: "images/79.0140.3.png",
         category: "58-labels",
@@ -205,7 +205,7 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "79.0140.4",
-        description: "Pressure Clamp Mount - 7.00\"W × 3.50\"H × 1.00\"D - C58ZV White",
+        description: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
         compatibility: 'C58ZV',
         image: "images/79.0140.4.png",
         category: "58-labels",
@@ -214,7 +214,7 @@ const products = [
     {
         name: "Wall Holder",
         sku: "79.0014.27",
-        description: "Wall Mount Holder - 7.00\"W × 3.50\"H × 3.15\"D - C58ZV White",
+        description: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.27.png",
         category: "58-labels",
@@ -223,7 +223,7 @@ const products = [
     {
         name: "Wall Holder",
         sku: "79.0014.26",
-        description: "Wall Mount Holder - 7.00\"W × 3.50\"H × 3.15\"D - C58ZB Black",
+        description: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.26.png",
         category: "58-labels",
@@ -234,7 +234,7 @@ const products = [
     {
         name: "Tilted Mount Stand",
         sku: "79.0014.18",
-        description: "Tilted Mount Stand - 10.00\"W × 8.88\"H × 4.00\"D (65°) - C102ZV White / C133ZV White",
+        description: 'Tilted Mount Stand - 10.00"W × 8.88"H × 4.00"D (65°)',
         compatibility: 'C102ZV / C133ZV',
         image: "images/79.0014.18.png",
         category: "102-133-labels",
@@ -253,7 +253,7 @@ const products = [
     {
         name: "Dovetail Adhesive Plate",
         sku: "53.0056.60",
-        description: "Dovetail Adhesive Plate Only - 5.00\"W × 2.50\"H × 1.00\"D - Replacement Part for C42ZV White",
+        description: 'Dovetail Adhesive Plate Only - 5.00"W × 2.50"H × 1.00"D - Replacement Part',
         compatibility: 'for C42ZV',
         image: "images/53.0056.60.png",
         category: "accessories"
@@ -301,7 +301,7 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "73.0023.2",
-        description: "Pressure Clamp with Included 53.0056.60 Adhesive Plate - 3.62\"W × 1.81\"H × 2.36\"D - C29ZV White/C29ZB Black",
+        description: 'Pressure Clamp with Included 53.0056.60 Adhesive Plate - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.2.png",
         category: "accessories"
@@ -409,43 +409,73 @@ function renderProducts() {
         }
     });
     
+    console.log('Products rendered. Total product cards:', document.querySelectorAll('.product-card').length);
+    console.log('Total quantity buttons:', document.querySelectorAll('.qty-btn').length);
+    console.log('Total quantity inputs:', document.querySelectorAll('.quantity-input').length);
+    
+    // Test if we can find a specific quantity input
+    const testInput = document.querySelector('.quantity-input');
+    if (testInput) {
+        console.log('Test input found:', testInput);
+        console.log('Test input ID:', testInput.id);
+        console.log('Test input value:', testInput.value);
+    } else {
+        console.error('No quantity inputs found!');
+    }
+    
+    // Add direct click handlers for testing
+    const qtyButtons = document.querySelectorAll('.qty-btn');
+    qtyButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            console.log('Direct click handler triggered on:', this);
+            e.stopPropagation();
+        });
+    });
+    
     // Initialize hover effects for the newly rendered product cards
     initProductCardHoverEffects();
 }
 
-// Event Delegation for Better Performance
-function initEventDelegation() {
-    console.log('Initializing event delegation on GitHub Pages');
-    
-    // Quantity controls
-    document.addEventListener('click', function(e) {
-        if (e.target.matches('.qty-btn')) {
-            const sku = e.target.dataset.sku;
-            const action = e.target.dataset.action;
-            const change = action === 'increase' ? 1 : -1;
-            updateQuantity(sku, change);
-        }
-        
-        if (e.target.matches('.add-to-cart-btn')) {
-            const sku = e.target.dataset.sku;
-            addToCart(sku);
-        }
-    });
+// Event Delegation for Better Performance - Set up immediately
+console.log('Setting up event delegation immediately');
 
-    // Cart toggle
-    document.addEventListener('click', function(e) {
-        if (e.target.matches('.cart-toggle')) {
-            toggleCart();
-        }
-        
-        if (e.target.matches('.clear-cart-btn')) {
-            clearCart();
-        }
-        
-        if (e.target.matches('.checkout-btn')) {
-            checkout();
-        }
-    });
+// Quantity controls
+document.addEventListener('click', function(e) {
+    console.log('Click event detected on:', e.target, 'Class:', e.target.className);
+    if (e.target.matches('.qty-btn')) {
+        console.log('Quantity button clicked');
+        const sku = e.target.dataset.sku;
+        const action = e.target.dataset.action;
+        const change = action === 'increase' ? 1 : -1;
+        console.log('SKU:', sku, 'Action:', action, 'Change:', change);
+        updateQuantity(sku, change);
+    } else {
+        console.log('Click not on quantity button');
+    }
+    
+    if (e.target.matches('.add-to-cart-btn')) {
+        const sku = e.target.dataset.sku;
+        addToCart(sku);
+    }
+});
+
+// Cart toggle
+document.addEventListener('click', function(e) {
+    if (e.target.matches('.cart-toggle')) {
+        toggleCart();
+    }
+    
+    if (e.target.matches('.clear-cart-btn')) {
+        clearCart();
+    }
+    
+    if (e.target.matches('.checkout-btn')) {
+        checkout();
+    }
+});
+
+function initEventDelegation() {
+    console.log('Event delegation already set up');
 }
 
 // Local Storage Functions
@@ -681,9 +711,18 @@ window.addEventListener('beforeunload', saveCartToStorage);
 
 // Shopping Cart Functions
 function updateQuantity(sku, change) {
+    console.log('updateQuantity called with SKU:', sku, 'Change:', change);
     const input = document.getElementById(`qty-${sku}`);
+    console.log('Input element found:', input);
+    
+    if (!input) {
+        console.error('Input element not found for SKU:', sku);
+        return;
+    }
+    
     const currentQty = parseInt(input.value) || 0;
     const newQty = Math.max(0, currentQty + change);
+    console.log('Current qty:', currentQty, 'New qty:', newQty);
     input.value = newQty;
     
     // Enable/disable add to cart button

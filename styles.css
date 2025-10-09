@@ -398,6 +398,9 @@ body {
     cursor: pointer;
     font-weight: bold;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .qty-btn:hover {
@@ -415,6 +418,9 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .add-to-cart-btn {
@@ -426,6 +432,9 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 10;
+    pointer-events: auto;
 }
 
 .add-to-cart-btn:hover {
