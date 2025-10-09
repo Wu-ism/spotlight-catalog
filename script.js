@@ -237,7 +237,7 @@ const products = [
         compatibility: 'C102ZV / C133ZV',
         image: "images/79.0014.18.png",
         category: "102-133-labels",
-        orientation: "dual"
+        orientation: "portrait-landscape"
     },
     
     // Accessories & Replacement Parts
@@ -354,6 +354,8 @@ function renderProductCard(product) {
         orientationTag = '<span class="orientation-tag portrait">Portrait</span>';
     } else if (product.orientation === 'dual') {
         orientationTag = '<span class="orientation-tag dual">Dual</span>';
+    } else if (product.orientation === 'portrait-landscape') {
+        orientationTag = '<span class="orientation-tag portrait">Portrait</span> <span class="orientation-tag landscape">Landscape</span>';
     }
     
     return `
@@ -364,7 +366,8 @@ function renderProductCard(product) {
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
-                <div class="product-sku">SKU: ${product.sku} ${orientationTag}</div>
+                <div class="product-sku">SKU: ${product.sku}</div>
+                ${orientationTag ? `<div class="orientation-container">${orientationTag}</div>` : ''}
                 <div class="product-description">${product.description}</div>
                 <div class="compatibility-label">Compatible: ${product.compatibility}</div>
                 <div class="quantity-controls">
