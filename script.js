@@ -245,9 +245,9 @@ const products = [
         name: "Magnetic Holder Universal - Kit",
         sku: "73.0023.3",
         description: "Magnetic Mounting System - Includes 53.0056.60 Adhesive Plate - 14.75\"W × 14.00\"H × 2.76\"D - Universal Compatibility",
-        compatibility: 'All Sizes',
+        compatibility: 'Universal',
         image: "images/73.0023.3.png",
-        category: "accessories"
+        category: "other-mounting-fixtures"
     },
     {
         name: "Dovetail Adhesive Plate - Only",
@@ -261,9 +261,9 @@ const products = [
         name: "Foam Tape Universal - Only",
         sku: "20.2223.7",
         description: "Double-Sided Foam Tape Only - Universal Mounting Solution",
-        compatibility: 'Replacement Part',
+        compatibility: 'Universal',
         image: "images/Foam Tape - DBL Sided.png",
-        category: "replacement-parts"
+        category: "other-mounting-fixtures"
     },
     {
         name: "Universal Rail with foam tape",
@@ -271,7 +271,7 @@ const products = [
         description: "Universal Mounting Rail with Pre-Applied Foam Tape - 1.25\"D - Universal Compatibility",
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.248.png",
-        category: "accessories"
+        category: "other-mounting-fixtures"
     },
     {
         name: "Hinge Pressure Clamp - Kit",
@@ -337,8 +337,8 @@ const categories = {
         description: "C102ZV White/C133ZV White",
         order: 4
     },
-    "accessories": {
-        name: "Accessories & Mounting",
+    "other-mounting-fixtures": {
+        name: "Other Mounting Fixtures",
         description: "Universal mounting solutions and accessories",
         order: 5
     }
@@ -360,6 +360,7 @@ function renderProductCard(product) {
         <div class="product-card" data-sku="${product.sku}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
+                <button class="use-cases-btn" data-sku="${product.sku}" data-action="use-cases" title="See Use Cases">📷</button>
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
@@ -384,7 +385,7 @@ function renderProducts() {
         '58-labels': document.querySelector('[data-category="58-labels"] .products-grid'),
         '102-133-labels': document.querySelector('[data-category="102-133-labels"] .products-grid'),
         'pressure-clamps': document.querySelector('[data-category="pressure-clamps"] .products-grid'),
-        'accessories': document.querySelector('[data-category="accessories"] .products-grid'),
+        'other-mounting-fixtures': document.querySelector('[data-category="other-mounting-fixtures"] .products-grid'),
         'replacement-parts': document.querySelector('[data-category="replacement-parts"] .products-grid')
     };
 
@@ -446,6 +447,16 @@ document.addEventListener('click', function(e) {
         console.log('Add to cart button clicked');
         const sku = addToCartBtn.dataset.sku;
         addToCart(sku);
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
+    
+    const useCasesBtn = e.target.closest('.use-cases-btn');
+    if (useCasesBtn) {
+        console.log('Use cases button clicked');
+        const sku = useCasesBtn.dataset.sku;
+        showUseCases(sku);
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -567,14 +578,24 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelBtn = document.getElementById('cancelCheckout');
     const checkoutForm = document.getElementById('checkoutForm');
     
+    // Use Cases Modal event listeners
+    const useCasesModal = document.getElementById('useCasesModal');
+    const closeUseCasesModalBtn = document.getElementById('closeUseCasesModal');
+    
     // Close modal when clicking X or Cancel
     closeModalBtn.addEventListener('click', closeModal);
     cancelBtn.addEventListener('click', closeModal);
+    
+    // Use Cases Modal event listeners
+    closeUseCasesModalBtn.addEventListener('click', closeUseCasesModal);
     
     // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             closeModal();
+        }
+        if (event.target === useCasesModal) {
+            closeUseCasesModal();
         }
     });
     
@@ -620,16 +641,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scrollToTopBtn.classList.remove('show');
         }
         
-        // Cart sticky behavior
-        if (!cartOriginalPosition) {
-            cartOriginalPosition = shoppingCart.offsetTop;
-        }
-        
-        if (window.pageYOffset > cartOriginalPosition - 20) {
-            shoppingCart.classList.add('sticky');
-        } else {
-            shoppingCart.classList.remove('sticky');
-        }
+        // Cart stays in place - no sticky behavior
     });
     
     
@@ -815,6 +827,62 @@ function closeModal() {
     document.getElementById('checkoutForm').reset();
 }
 
+function showUseCases(sku) {
+    const useCasesModal = document.getElementById('useCasesModal');
+    const useCasesContent = useCasesModal.querySelector('.use-cases-content');
+    
+    // Get all use case images for this SKU
+    const useCaseImages = getUseCaseImages(sku);
+    
+    if (useCaseImages.length === 0) {
+        useCasesContent.innerHTML = `
+            <p>No use case images available for SKU: ${sku}</p>
+        `;
+    } else {
+        let imagesHtml = `<h3>Use Cases for SKU: ${sku}</h3><div class="use-cases-gallery">`;
+        
+        useCaseImages.forEach(imagePath => {
+            imagesHtml += `
+                <div class="use-case-image">
+                    <img src="${imagePath}" alt="Use case for ${sku}" loading="lazy">
+                </div>
+            `;
+        });
+        
+        imagesHtml += '</div>';
+        useCasesContent.innerHTML = imagesHtml;
+    }
+    
+    useCasesModal.style.display = 'block';
+}
+
+function getUseCaseImages(sku) {
+    // This function would ideally be dynamic, but for now we'll hardcode the known images
+    const useCaseImageMap = {
+        '20.2223.7': ['images/use-case/20.2223.7-use-case.jpg'],
+        '79.0014.5': [
+            'images/use-case/79.0014.5-use-case (1).jpg',
+            'images/use-case/79.0014.5-use-case (3).jpg',
+            'images/use-case/79.0014.5-use-case (4).jpg',
+            'images/use-case/79.0014.5-use-case (5).jpg',
+            'images/use-case/79.0014.5-use-case (6).jpg',
+            'images/use-case/79.0014.5-use-case (7).jpg',
+            'images/use-case/79.0014.5-use-case (8).jpg',
+            'images/use-case/79.0014.5-use-case (9).jpg'
+        ],
+        '79.0014.6': [
+            'images/use-case/79.0014.6-use-case (2).jpg',
+            'images/use-case/79.0014.6-use-case (3).jpg'
+        ]
+    };
+    
+    return useCaseImageMap[sku] || [];
+}
+
+function closeUseCasesModal() {
+    document.getElementById('useCasesModal').style.display = 'none';
+}
+
 function sendEmailRequest(formData) {
     const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
     
@@ -870,8 +938,8 @@ function showCartNotification(message) {
     const notification = document.createElement('div');
     notification.style.cssText = `
         position: fixed;
-        top: 20px;
-        right: 20px;
+        bottom: 20px;
+        left: 20px;
         background: #28a745;
         color: white;
         padding: 15px 20px;

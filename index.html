@@ -12,8 +12,13 @@
 <body>
     <div class="header">
         <div class="container">
-            <h1>Spotlight Catalog</h1>
-            <p>Label Holders & Mounting Fixtures Collection</p>
+            <div class="header-content">
+                <img src="images/ns-logo.png" alt="Nutrislice Logo" class="header-logo">
+                <div class="header-text">
+                    <h1>Spotlight Catalog</h1>
+                    <p>Label Holders & Mounting Fixtures Collection</p>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -23,10 +28,10 @@
             <!-- Shopping Cart -->
             <div class="shopping-cart" id="shoppingCart">
                 <div class="cart-header">
-                    <h3>🛒 Shopping Cart</h3>
+                    <h3>🛒 Fixture Request Cart</h3>
                     <div class="cart-actions">
                         <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-                        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                        <button class="checkout-btn" onclick="checkout()">Submit Request</button>
                     </div>
                 </div>
                 <div class="cart-content" id="cartContent">
@@ -79,8 +84,8 @@
             </div>
         </div>
 
-        <!-- Accessories & Mounting -->
-        <div class="category" data-category="accessories">
+        <!-- Other Mounting Fixtures -->
+        <div class="category" data-category="other-mounting-fixtures">
             <div class="category-header">Other Mounting Fixtures</div>
             <div class="products-grid">
                 <!-- Products will be dynamically rendered here -->
@@ -134,6 +139,19 @@
                     <button type="submit" id="submitCheckout" class="btn-submit">Send Request</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Use Cases Modal -->
+    <div id="useCasesModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Use Cases</h2>
+                <span class="close" id="closeUseCasesModal">&times;</span>
+            </div>
+            <div class="use-cases-content">
+                <p>Use case images will be added here.</p>
+            </div>
         </div>
     </div>
 
