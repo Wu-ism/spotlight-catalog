@@ -2,6 +2,7 @@
 let cart = {};
 let cartVisible = false;
 
+
 // Product Data (embedded for better compatibility)
 const products = [
     // 2.9" Labels (C29ZV White/C29ZB Black)
@@ -295,6 +296,7 @@ const products = [
     }
 ];
 
+
 const categories = {
     "29-labels": {
         name: "2.9\" Labels",
@@ -355,6 +357,7 @@ function renderProducts() {
         'accessories': document.querySelector('[data-category="accessories"] .products-grid')
     };
 
+
     // Clear existing content
     Object.values(categoryContainers).forEach(container => {
         if (container) container.innerHTML = '';
@@ -367,6 +370,9 @@ function renderProducts() {
             container.innerHTML += renderProductCard(product);
         }
     });
+    
+    // Initialize hover effects for the newly rendered product cards
+    initProductCardHoverEffects();
 }
 
 // Event Delegation for Better Performance
@@ -545,16 +551,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Product card hover effects
-    productCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-5px)';
+    // Product card hover effects - moved to after products are rendered
+    function initProductCardHoverEffects() {
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
         });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-        });
-    });
+    }
 
     // Image error handling
     const images = document.querySelectorAll('img');
@@ -575,11 +584,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the application
     function init() {
+        
         // Load cart from storage
         loadCartFromStorage();
         
         // Small delay to ensure DOM is fully ready
         setTimeout(() => {
+            
             // Render products dynamically
             renderProducts();
             
@@ -591,8 +602,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 50);
     }
 
-    // Initialize everything
-    init();
+    // Initialize everything after DOM is ready
+    // init(); // Moved to DOMContentLoaded event
 
     // Enhanced search with debouncing
     let searchTimeout;
@@ -602,6 +613,9 @@ document.addEventListener('DOMContentLoaded', function() {
             performSearch();
         }, 300);
     });
+    
+    // Initialize the application
+    init();
 });
 
 // Save cart to storage before page unload
