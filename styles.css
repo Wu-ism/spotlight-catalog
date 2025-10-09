@@ -1,11 +1,11 @@
 /* CSS Variables for Consistency */
 :root {
-    --primary-color: #667eea;
-    --secondary-color: #764ba2;
-    --accent-color: #1976d2;
-    --success-color: #28a745;
-    --danger-color: #ff4757;
-    --warning-color: #ffc107;
+    --primary-color: #F7AF1E; /* Golden yellow */
+    --secondary-color: #FF6074; /* Coral pink */
+    --accent-color: #1CDB92; /* Mint green */
+    --success-color: #8D2CFF; /* Purple */
+    --danger-color: #FF6074; /* Coral pink for errors */
+    --warning-color: #11AACE; /* Cyan blue */
     --light-bg: #e3f2fd;
     --border-radius: 10px;
     --border-radius-sm: 5px;
@@ -28,7 +28,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Rubik', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #f8f9fa;
@@ -36,7 +36,7 @@ body {
 
 /* Header Styles */
 .header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--success-color) 0%, var(--warning-color) 100%);
     color: white;
     padding: 2rem 0;
     text-align: center;
@@ -356,10 +356,17 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 5px;
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.cart-item-qty::-webkit-outer-spin-button,
+.cart-item-qty::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari, Edge */
+    margin: 0;
 }
 
 .cart-item-remove {
-    background: #ff4757;
+    background: var(--danger-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -369,7 +376,7 @@ body {
 }
 
 .cart-item-remove:hover {
-    background: #ff3742;
+    background: var(--secondary-color);
 }
 
 .cart-total {
@@ -682,7 +689,7 @@ body {
 }
 
 .qty-btn {
-    background: #667eea;
+    background: var(--warning-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -697,7 +704,7 @@ body {
 }
 
 .qty-btn:hover {
-    background: #5a6fd8;
+    background: var(--primary-color);
 }
 
 .qty-btn:disabled {
@@ -714,10 +721,17 @@ body {
     position: relative;
     z-index: 10;
     pointer-events: auto;
+    -moz-appearance: textfield; /* Firefox */
+}
+
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari, Edge */
+    margin: 0;
 }
 
 .add-to-cart-btn {
-    background: #28a745;
+    background: var(--accent-color);
     color: white;
     border: none;
     border-radius: 4px;
@@ -731,7 +745,8 @@ body {
 }
 
 .add-to-cart-btn:hover {
-    background: #218838;
+    background: var(--success-color);
+    transform: translateY(-2px);
 }
 
 .add-to-cart-btn:disabled {
@@ -771,7 +786,7 @@ mark {
 }
 
 .category-header {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background: linear-gradient(135deg, var(--success-color) 0%, var(--warning-color) 100%);
     color: white;
     padding: 1rem 1.5rem;
     margin-bottom: 1.5rem;
