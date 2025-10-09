@@ -2,6 +2,9 @@
 let cart = {};
 let cartVisible = false;
 
+// Debug: Check if script is loading
+console.log('Script loaded successfully on GitHub Pages');
+
 
 // Product Data (embedded for better compatibility)
 const products = [
@@ -9,215 +12,240 @@ const products = [
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.5",
-        description: "Landscape - 75 degree tilt - C29ZV White",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "75° Tilted Stand - C29ZV White",
+        compatibility: 'C29ZV',
         image: "images/79.0014.5.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.8",
-        description: "Landscape - 75 degree tilt - C29ZB Black",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "75° Tilted Stand - C29ZB Black",
+        compatibility: 'C29ZB',
         image: "images/79.0014.8.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Pressure Clamp",
         sku: "79.0140.1",
-        description: "Landscape - C29ZV White",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Pressure Clamp Mount - C29ZV White",
+        compatibility: 'C29ZV',
         image: "images/79.0140.1.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Wall Holder",
         sku: "79.0014.24",
-        description: "Landscape - C29ZV White",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Wall Mount Holder - C29ZV White",
+        compatibility: 'C29ZV',
         image: "images/79.0014.24.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.19",
-        description: "Landscape - 60 degrees - C29ZV White",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "60° Tilted Stand - C29ZV White",
+        compatibility: 'C29ZV',
         image: "images/79.0014.19.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Shelf Rail Mount",
         sku: "28.0488.2",
-        description: "C29ZV White / C29ZB Black",
-        compatibility: '2.9" & 4.2" Labels (White & Black)',
+        description: "Shelf Rail Mounting System - C29ZV White / C29ZB Black",
+        compatibility: 'C29ZV / C29ZB',
         image: "images/28.0488.2.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Mounting Rail Universal",
         sku: "28.0487.254",
-        description: "Clear double sided Remo Tape - C29ZV White / C29ZB Black",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Universal Mounting Rail with Clear Double-Sided Remo Tape - C29ZV White / C29ZB Black",
+        compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.254.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Hook Over Rail Mount",
         sku: "28.0487.345",
-        description: "C29ZV White / C29ZB Black",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Hook Over Rail Mounting System - C29ZV White / C29ZB Black",
+        compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.345.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     {
         name: "Custom Label Holder w/Clips",
         sku: "73.0023.4",
-        description: "Includes clips - C29ZV White / C29ZB Black",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Custom Label Holder with Included Clips - C29ZV White / C29ZB Black",
+        compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.4.png",
-        category: "29-labels"
+        category: "29-labels",
+        orientation: "landscape"
     },
     
     // 4.2" Labels (C42ZV White/C42ZB Black)
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.20",
-        description: "Landscape - 60 degree tilt - C42ZV White",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "60° Tilted Stand - C42ZV White",
+        compatibility: 'C42ZV',
         image: "images/79.0014.20.png",
-        category: "42-labels"
+        category: "42-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.14",
-        description: "Landscape - C42ZV White / C42ZB Black",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "Tilted Stand - C42ZV White / C42ZB Black",
+        compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.14.png",
-        category: "42-labels"
+        category: "42-labels",
+        orientation: "landscape"
     },
     {
         name: "Pressure Clamp",
         sku: "79.0140.2",
-        description: "Landscape - C42ZV White",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "Pressure Clamp Mount - C42ZV White",
+        compatibility: 'C42ZV',
         image: "images/79.0140.2.png",
-        category: "42-labels"
+        category: "42-labels",
+        orientation: "landscape"
     },
     {
         name: "Wall Holder",
         sku: "79.0014.25",
-        description: "Landscape - C42ZV White / C42ZB Black",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "Wall Mount Holder - C42ZV White / C42ZB Black",
+        compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.25.png",
-        category: "42-labels"
+        category: "42-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.16",
-        description: "Portrait - C42ZV White",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "Tilted Stand - C42ZV White",
+        compatibility: 'C42ZV',
         image: "images/79.0014.16.png",
-        category: "42-labels"
+        category: "42-labels",
+        orientation: "portrait"
     },
     
     // 5.8" Labels (C58ZV White/C58ZB Black)
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.21",
-        description: "Portrait - 60 degree tilt - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "60° Tilted Stand - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0014.21.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "portrait"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.22",
-        description: "Landscape - 60 degree tilt - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "60° Tilted Stand - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0014.22.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.4",
-        description: "Landscape - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Tilted Stand - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0014.4.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.6",
-        description: "Portrait - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Tilted Stand - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0014.6.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "portrait"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.12",
-        description: "Landscape - C58ZB Black",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Tilted Stand - C58ZB Black",
+        compatibility: 'C58ZB',
         image: "images/79.0014.12.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     {
         name: "Tilted Sleeve Stand",
         sku: "79.0014.13",
-        description: "Portrait - C58ZB Black",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Tilted Stand - C58ZB Black",
+        compatibility: 'C58ZB',
         image: "images/79.0014.13.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "portrait"
     },
     {
         name: "Pressure Clamp",
         sku: "79.0140.3",
-        description: "Portrait - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Pressure Clamp Mount - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0140.3.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "portrait"
     },
     {
         name: "Pressure Clamp",
         sku: "79.0140.4",
-        description: "Landscape - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Pressure Clamp Mount - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0140.4.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     {
         name: "Wall Holder",
         sku: "79.0014.27",
-        description: "Landscape - C58ZV White",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Wall Mount Holder - C58ZV White",
+        compatibility: 'C58ZV',
         image: "images/79.0014.27.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     {
         name: "Wall Holder",
         sku: "79.0014.26",
-        description: "Landscape - C58ZB Black",
-        compatibility: '5.8" Labels (White & Black)',
+        description: "Wall Mount Holder - C58ZB Black",
+        compatibility: 'C58ZB',
         image: "images/79.0014.26.png",
-        category: "58-labels"
+        category: "58-labels",
+        orientation: "landscape"
     },
     
     // 10.2" & 13.3" Labels (C102ZV White/C133ZV White)
     {
         name: "Tilted Mount Stand",
         sku: "79.0014.18",
-        description: "Landscape or Portrait - C102ZV White / C133ZV White",
-        compatibility: '10.2" & 13.3" Labels (White)',
+        description: "Tilted Mount Stand - C102ZV White / C133ZV White",
+        compatibility: 'C102ZV / C133ZV',
         image: "images/79.0014.18.png",
-        category: "102-133-labels"
+        category: "102-133-labels",
+        orientation: "dual"
     },
     
     // Accessories & Mounting
     {
         name: "Magnetic Holder",
         sku: "73.0023.3",
-        description: "Includes 53.0056.60 adhesive plate",
+        description: "Magnetic Mounting System - Includes 53.0056.60 Adhesive Plate - Universal Compatibility",
         compatibility: 'All Sizes',
         image: "images/73.0023.3.png",
         category: "accessories"
@@ -225,15 +253,15 @@ const products = [
     {
         name: "Dovetail Adhesive Plate",
         sku: "53.0056.60",
-        description: "Dovetail Adhesive Plate - only - for C42ZV White",
-        compatibility: '4.2" Labels (White & Black)',
+        description: "Dovetail Adhesive Plate Only - Replacement Part for C42ZV White",
+        compatibility: 'for C42ZV',
         image: "images/53.0056.60.png",
         category: "accessories"
     },
     {
         name: "Foam Tape",
         sku: "20.2223.7",
-        description: "Foam Tape - only",
+        description: "Double-Sided Foam Tape Only - Universal Mounting Solution",
         compatibility: 'All Sizes',
         image: "images/Foam Tape - DBL Sided.png",
         category: "accessories"
@@ -241,7 +269,7 @@ const products = [
     {
         name: "Universal Rail with foam tape",
         sku: "28.0487.248",
-        description: "Foam Tape - only",
+        description: "Universal Mounting Rail with Pre-Applied Foam Tape - Universal Compatibility",
         compatibility: 'All Sizes',
         image: "images/28.0487.248.png",
         category: "accessories"
@@ -249,7 +277,7 @@ const products = [
     {
         name: "Peg Hook Adapter",
         sku: "28.0174.29",
-        description: 'Peg Hook Adaptor for Z Label "adjustable"',
+        description: 'Adjustable Peg Hook Adapter for Z Label Mounting - Universal Compatibility',
         compatibility: 'All Sizes',
         image: "images/28.0174.29.png",
         category: "accessories"
@@ -257,15 +285,15 @@ const products = [
     {
         name: "Hinge Pressure Clamp",
         sku: "73.0023.1",
-        description: "Includes 53.0056.60 adhesive plate - C29ZV White/C29ZB Black, C42ZV White/C42ZB Black, C58ZV White/C58ZB Black (2x recommended)",
-        compatibility: '2.9", 4.2" & 5.8" Labels (White & Black)',
+        description: "Hinge Pressure Clamp with Included 53.0056.60 Adhesive Plate - Multi-Size Compatibility (2x Recommended)",
+        compatibility: 'C29ZV / C29ZB, C42ZV / C42ZB, and C58ZV / C58ZB - 2x recommended',
         image: "images/73.0023.1.png",
         category: "accessories"
     },
     {
         name: "Hinge Pressure Clamp",
         sku: "53.0056.9",
-        description: "Clamp - only",
+        description: "Hinge Pressure Clamp Only - Replacement Part - Universal Compatibility",
         compatibility: 'All Sizes',
         image: "images/TBD.png",
         category: "accessories"
@@ -273,15 +301,15 @@ const products = [
     {
         name: "Pressure Clamp",
         sku: "73.0023.2",
-        description: "Includes 53.0056.60 adhesive plate - C29ZV White/C29ZB Black",
-        compatibility: '2.9" Labels (White & Black)',
+        description: "Pressure Clamp with Included 53.0056.60 Adhesive Plate - C29ZV White/C29ZB Black",
+        compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.2.png",
         category: "accessories"
     },
     {
         name: "Pressure Clamp",
         sku: "53.0056.23",
-        description: "Clamp - only",
+        description: "Pressure Clamp Only - Replacement Part - Universal Compatibility",
         compatibility: 'All Sizes',
         image: "images/TBD.png",
         category: "accessories"
@@ -289,7 +317,7 @@ const products = [
     {
         name: "Battery Pack",
         sku: "70.0006.6",
-        description: '4x CR2430 battery pack for 5.8", 10.2" & 13.3" labels',
+        description: '4x CR2430 Battery Pack - Power Supply for 5.8", 10.2" & 13.3" Labels',
         compatibility: '5.8", 10.2" & 13.3" Labels (White)',
         image: "images/70.0006.6.png",
         category: "accessories"
@@ -327,6 +355,16 @@ const categories = {
 
 // Dynamic Product Rendering
 function renderProductCard(product) {
+    // Determine orientation tag
+    let orientationTag = '';
+    if (product.orientation === 'landscape') {
+        orientationTag = '<span class="orientation-tag landscape">Landscape</span>';
+    } else if (product.orientation === 'portrait') {
+        orientationTag = '<span class="orientation-tag portrait">Portrait</span>';
+    } else if (product.orientation === 'dual') {
+        orientationTag = '<span class="orientation-tag dual">Dual</span>';
+    }
+    
     return `
         <div class="product-card" data-sku="${product.sku}">
             <div class="product-image">
@@ -334,7 +372,7 @@ function renderProductCard(product) {
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
-                <div class="product-sku">SKU: ${product.sku}</div>
+                <div class="product-sku">SKU: ${product.sku} ${orientationTag}</div>
                 <div class="product-description">${product.description}</div>
                 <div class="compatibility-label">Compatible: ${product.compatibility}</div>
                 <div class="quantity-controls">
@@ -377,6 +415,8 @@ function renderProducts() {
 
 // Event Delegation for Better Performance
 function initEventDelegation() {
+    console.log('Initializing event delegation on GitHub Pages');
+    
     // Quantity controls
     document.addEventListener('click', function(e) {
         if (e.target.matches('.qty-btn')) {
@@ -427,6 +467,7 @@ function loadCartFromStorage() {
 
 // Search Functionality
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOMContentLoaded event fired on GitHub Pages');
     const searchInput = document.getElementById('searchInput');
     const categories = document.querySelectorAll('.category');
 
@@ -584,9 +625,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the application
     function init() {
+        console.log('Initializing application on GitHub Pages');
         
-        // Load cart from storage
-        loadCartFromStorage();
+        try {
+            // Load cart from storage
+            loadCartFromStorage();
         
         // Small delay to ensure DOM is fully ready
         setTimeout(() => {
@@ -600,6 +643,9 @@ document.addEventListener('DOMContentLoaded', function() {
             // Perform initial search
             performSearch();
         }, 50);
+        } catch (error) {
+            console.error('Error during initialization:', error);
+        }
     }
 
     // Initialize everything after DOM is ready
@@ -618,6 +664,18 @@ document.addEventListener('DOMContentLoaded', function() {
     init();
 });
 
+// Fallback initialization in case DOMContentLoaded already fired
+if (document.readyState === 'loading') {
+    // DOM is still loading, wait for DOMContentLoaded
+    console.log('DOM still loading, waiting for DOMContentLoaded');
+} else {
+    // DOM is already loaded, initialize immediately
+    console.log('DOM already loaded, initializing immediately');
+    setTimeout(() => {
+        init();
+    }, 100);
+}
+
 // Save cart to storage before page unload
 window.addEventListener('beforeunload', saveCartToStorage);
 
@@ -634,10 +692,21 @@ function updateQuantity(sku, change) {
 }
 
 function addToCart(sku) {
-    const input = document.getElementById(`qty-${sku}`);
-    const quantity = parseInt(input.value) || 0;
+    console.log('addToCart called for SKU:', sku);
     
-    if (quantity <= 0) return;
+    try {
+        const input = document.getElementById(`qty-${sku}`);
+        if (!input) {
+            console.error('Input element not found for SKU:', sku);
+            return;
+        }
+        
+        const quantity = parseInt(input.value) || 0;
+        
+        if (quantity <= 0) {
+            console.log('Quantity is 0 or less, not adding to cart');
+            return;
+        }
     
     const productCard = input.closest('.product-card');
     const productName = productCard.querySelector('.product-name').textContent;
@@ -659,9 +728,14 @@ function addToCart(sku) {
     input.value = 0;
     input.parentElement.querySelector('.add-to-cart-btn').disabled = true;
     
-    updateCartDisplay();
-    saveCartToStorage();
-    showCartNotification(`${quantity} x ${productName} added to cart!`);
+        updateCartDisplay();
+        saveCartToStorage();
+        showCartNotification(`${quantity} x ${productName} added to cart!`);
+        
+        console.log('Successfully added to cart:', productName, 'Quantity:', quantity);
+    } catch (error) {
+        console.error('Error adding to cart:', error);
+    }
 }
 
 function removeFromCart(sku) {
