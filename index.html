@@ -14,29 +14,31 @@
         </div>
     </div>
 
-    <div class="container">
-        <div class="search-bar">
-            <input type="text" class="search-input" id="searchInput" placeholder="Search products by name, SKU, or description...">
-        </div>
-        
-        <!-- Shopping Cart -->
-        <div class="shopping-cart" id="shoppingCart">
-            <div class="cart-header">
-                <h3>🛒 Shopping Cart</h3>
-                <div class="cart-actions">
-                    <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-                    <button class="checkout-btn" onclick="checkout()">Checkout</button>
+    <div class="main-layout">
+        <!-- Main Content Area -->
+        <div class="main-content">
+            <div class="search-bar">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search products by name, SKU, or description...">
+            </div>
+
+            <!-- Shopping Cart -->
+            <div class="shopping-cart" id="shoppingCart">
+                <div class="cart-header">
+                    <h3>🛒 Shopping Cart</h3>
+                    <div class="cart-actions">
+                        <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                        <button class="checkout-btn" onclick="checkout()">Checkout</button>
+                    </div>
+                </div>
+                <div class="cart-content" id="cartContent">
+                    <div class="cart-items" id="cartItems">
+                        <p class="empty-cart">Your cart is empty</p>
+                    </div>
+                    <div class="cart-total" id="cartTotal">
+                        <strong>Items: 0</strong>
+                    </div>
                 </div>
             </div>
-            <div class="cart-content" id="cartContent">
-                <div class="cart-items" id="cartItems">
-                    <p class="empty-cart">Your cart is empty</p>
-                </div>
-                <div class="cart-total" id="cartTotal">
-                    <strong>Items: 0</strong>
-                </div>
-            </div>
-        </div>
 
         <!-- 2.9" Labels (C29ZV White/C29ZB Black) -->
         <div class="category" data-category="29-labels">
@@ -93,6 +95,7 @@
                 <!-- Products will be dynamically rendered here -->
             </div>
         </div>
+        </div>
     </div>
 
     <!-- Checkout Form Modal -->
@@ -104,20 +107,20 @@
             </div>
             <form id="checkoutForm">
                 <div class="form-group">
-                    <label for="customerName">Customer Name *</label>
-                    <input type="text" id="customerName" name="customerName" required>
+                    <label for="institutionName">Name of Institution *</label>
+                    <input type="text" id="institutionName" name="institutionName" required>
                 </div>
                 <div class="form-group">
-                    <label for="customerEmail">Email Address *</label>
-                    <input type="email" id="customerEmail" name="customerEmail" required>
+                    <label for="contactName">Contact Name *</label>
+                    <input type="text" id="contactName" name="contactName" required>
                 </div>
                 <div class="form-group">
-                    <label for="companyName">Company Name</label>
-                    <input type="text" id="companyName" name="companyName">
+                    <label for="emailAddress">Email Address *</label>
+                    <input type="email" id="emailAddress" name="emailAddress" required>
                 </div>
                 <div class="form-group">
-                    <label for="phoneNumber">Phone Number</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber">
+                    <label for="phoneNumber">Phone Number *</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
                 </div>
                 <div class="form-group">
                     <label for="shippingAddress">Shipping Address *</label>
@@ -134,6 +137,13 @@
             </form>
         </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top" title="Scroll to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
 
     <script src="script.js"></script>
 </body>

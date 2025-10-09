@@ -701,6 +701,71 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     });
     
+    // Modal event listeners
+    const modal = document.getElementById('checkoutModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('cancelCheckout');
+    const checkoutForm = document.getElementById('checkoutForm');
+    
+    // Close modal when clicking X or Cancel
+    closeModalBtn.addEventListener('click', closeModal);
+    cancelBtn.addEventListener('click', closeModal);
+    
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+    
+    // Handle form submission
+    checkoutForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = {
+            institutionName: document.getElementById('institutionName').value,
+            contactName: document.getElementById('contactName').value,
+            emailAddress: document.getElementById('emailAddress').value,
+            phoneNumber: document.getElementById('phoneNumber').value,
+            shippingAddress: document.getElementById('shippingAddress').value,
+            specialInstructions: document.getElementById('specialInstructions').value
+        };
+        
+        // Validate required fields
+        if (!formData.institutionName || !formData.contactName || !formData.emailAddress || !formData.phoneNumber || !formData.shippingAddress) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+        
+        // Disable submit button to prevent double submission
+        const submitBtn = document.getElementById('submitCheckout');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+        
+        // Send email request
+        sendEmailRequest(formData);
+    });
+    
+    // Scroll to top functionality
+    const scrollToTopBtn = document.getElementById('scrollToTop');
+    
+    // Show/hide scroll to top button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            scrollToTopBtn.classList.add('show');
+        } else {
+            scrollToTopBtn.classList.remove('show');
+        }
+    });
+    
+    // Scroll to top when button is clicked
+    scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
     // Initialize the application
     init();
 });
@@ -855,9 +920,72 @@ function checkout() {
         return;
     }
     
-    // In a real application, this would redirect to a checkout page
+    // Show the checkout modal
+    const modal = document.getElementById('checkoutModal');
+    modal.style.display = 'block';
+    
+    // Populate cart summary in the form
+    populateCartSummary();
+}
+
+function populateCartSummary() {
+    // This function will be called to show cart items in the form
+    // For now, we'll just show the modal
+}
+
+function closeModal() {
+    const modal = document.getElementById('checkoutModal');
+    modal.style.display = 'none';
+    document.getElementById('checkoutForm').reset();
+}
+
+function sendEmailRequest(formData) {
     const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    alert('Checkout functionality would be implemented here. Items in cart: ' + totalItems);
+    
+    // Create email subject
+    const subject = `Nutrislice Spotlight Fixture Request`;
+    
+    // Create email body with cart items sorted by quantity and SKU
+    let emailBody = `Nutrislice Spotlight Fixture Request\n\n`;
+    emailBody += `Institution Information:\n`;
+    emailBody += `Institution: ${formData.institutionName}\n`;
+    emailBody += `Contact Name: ${formData.contactName}\n`;
+    emailBody += `Email: ${formData.emailAddress}\n`;
+    emailBody += `Phone: ${formData.phoneNumber}\n`;
+    emailBody += `Shipping Address: ${formData.shippingAddress}\n`;
+    emailBody += `Special Instructions: ${formData.specialInstructions || 'None'}\n\n`;
+    
+    emailBody += `Requested Items (${totalItems} total):\n`;
+    emailBody += `================================\n`;
+    
+    // Sort cart items by quantity (descending) then by SKU (ascending)
+    const sortedItems = Object.entries(cart).sort((a, b) => {
+        // First sort by quantity (descending)
+        if (b[1].quantity !== a[1].quantity) {
+            return b[1].quantity - a[1].quantity;
+        }
+        // Then sort by SKU (ascending)
+        return a[1].sku.localeCompare(b[1].sku);
+    });
+    
+    for (const [sku, item] of sortedItems) {
+        emailBody += `Qty: ${item.quantity} | SKU: ${item.sku}\n`;
+        emailBody += `Item: ${item.name}\n`;
+        emailBody += `Compatibility: ${item.compatibility}\n\n`;
+    }
+    
+    // Create mailto link
+    const mailtoLink = `mailto:hardware@nutrislice.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Show success message
+    alert('Your email client should open with the fixture request. If it doesn\'t, please email hardware@nutrislice.com with your request details.');
+    
+    // Close modal and clear cart
+    closeModal();
+    clearCart();
 }
 
 

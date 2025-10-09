@@ -61,6 +61,17 @@ body {
     padding: 0 1rem;
 }
 
+/* Main Layout */
+.main-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    width: 100%;
+}
+
 /* Search Bar */
 .search-bar {
     margin: 2rem 0;
@@ -210,8 +221,11 @@ body {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
     overflow: hidden;
+    margin-bottom: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-header {
@@ -267,12 +281,14 @@ body {
 
 .cart-content {
     padding: 20px;
-    max-height: 400px;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-items {
     margin-bottom: 20px;
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 .cart-item {
@@ -571,8 +587,54 @@ body {
     }
 }
 
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.scroll-to-top.show {
+    display: flex;
+}
+
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .main-layout {
+        padding: 0 10px;
+    }
+    
+    .shopping-cart {
+        margin-bottom: 20px;
+    }
+    
+    .cart-items {
+        max-height: 250px;
+    }
+    
     .modal-content {
         margin: 10% auto;
         width: 95%;
@@ -585,6 +647,18 @@ body {
     .btn-cancel,
     .btn-submit {
         width: 100%;
+    }
+    
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+    }
+    
+    .scroll-to-top svg {
+        width: 20px;
+        height: 20px;
     }
 }
 
