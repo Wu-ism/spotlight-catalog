@@ -1,8 +1,4 @@
-// Shopping Cart Data
-let cart = {};
 
-// Debug: Check if script is loading
-console.log('Script loaded successfully on GitHub Pages');
 
 
 // Product Data (embedded for better compatibility)
@@ -316,33 +312,6 @@ const products = [
 ];
 
 
-const categories = {
-    "29-labels": {
-        name: "2.9\" Labels",
-        description: "C29ZV White/C29ZB Black",
-        order: 1
-    },
-    "42-labels": {
-        name: "4.2\" Labels", 
-        description: "C42ZV White/C42ZB Black",
-        order: 2
-    },
-    "58-labels": {
-        name: "5.8\" Labels",
-        description: "C58ZV White/C58ZB Black", 
-        order: 3
-    },
-    "102-133-labels": {
-        name: "10.2\" & 13.3\" Labels",
-        description: "C102ZV White/C133ZV White",
-        order: 4
-    },
-    "other-mounting-fixtures": {
-        name: "Other Mounting Fixtures",
-        description: "Universal mounting solutions and accessories",
-        order: 5
-    }
-};
 
 // Dynamic Product Rendering
 function renderProductCard(product) {
@@ -358,11 +327,26 @@ function renderProductCard(product) {
         orientationTag = '<span class="orientation-tag portrait">Portrait</span> <span class="orientation-tag landscape">Landscape</span>';
     }
     
+    // Get use case images for this product
+    const useCaseImages = getUseCaseImages(product.sku);
+    const hasUseCases = useCaseImages.length > 0;
+    
     return `
         <div class="product-card" data-sku="${product.sku}">
             <div class="product-image">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
-                <button class="use-cases-btn" data-sku="${product.sku}" data-action="use-cases" title="See Use Cases">Use Cases</button>
+                ${hasUseCases ? `
+                    <div class="hover-use-cases" data-sku="${product.sku}">
+                        <div class="use-case-navigation">
+                            <button class="use-case-prev" data-sku="${product.sku}">‹</button>
+                            <span class="use-case-counter">1 / ${useCaseImages.length}</span>
+                            <button class="use-case-next" data-sku="${product.sku}">›</button>
+                        </div>
+                        <div class="use-case-image-container">
+                            <img class="use-case-image" src="${useCaseImages[0]}" alt="Use case for ${product.name}" loading="lazy">
+                        </div>
+                    </div>
+                ` : ''}
             </div>
             <div class="product-info">
                 <div class="product-name">${product.name}</div>
@@ -370,12 +354,6 @@ function renderProductCard(product) {
                 ${orientationTag ? `<div class="orientation-container">${orientationTag}</div>` : ''}
                 <div class="product-description">${product.description}</div>
                 <div class="compatibility-label">Compatible: ${product.compatibility}</div>
-                <div class="quantity-controls">
-                    <button class="qty-btn minus" data-sku="${product.sku}" data-action="decrease">-</button>
-                    <input type="number" id="qty-${product.sku}" value="0" min="0" class="quantity-input">
-                    <button class="qty-btn plus" data-sku="${product.sku}" data-action="increase">+</button>
-                    <button class="add-to-cart-btn" data-sku="${product.sku}">Add to Cart</button>
-                </div>
             </div>
         </div>
     `;
@@ -406,79 +384,43 @@ function renderProducts() {
         }
     });
     
-    console.log('Products rendered. Total product cards:', document.querySelectorAll('.product-card').length);
-    console.log('Total quantity buttons:', document.querySelectorAll('.qty-btn').length);
-    console.log('Total quantity inputs:', document.querySelectorAll('.quantity-input').length);
-    
-    // Test if we can find a specific quantity input
-    const testInput = document.querySelector('.quantity-input');
-    if (testInput) {
-        console.log('Test input found:', testInput);
-        console.log('Test input ID:', testInput.id);
-        console.log('Test input value:', testInput.value);
-    } else {
-        console.error('No quantity inputs found!');
-    }
-    
-    // Direct click handlers removed - using event delegation instead
     
     // Initialize hover effects for the newly rendered product cards
     initProductCardHoverEffects();
+    
+    // Initialize use case hover functionality
+    initUseCaseHoverEffects();
 }
 
 // Event Delegation for Better Performance - Set up immediately
-console.log('Setting up event delegation immediately');
 
 // Quantity controls
 document.addEventListener('click', function(e) {
-    // Check if the clicked element or any parent has the qty-btn class
-    const qtyBtn = e.target.closest('.qty-btn');
-    if (qtyBtn) {
-        console.log('Quantity button clicked');
-        const sku = qtyBtn.dataset.sku;
-        const action = qtyBtn.dataset.action;
-        const change = action === 'increase' ? 1 : -1;
-        updateQuantity(sku, change);
+    
+    
+    // Handle use case navigation buttons
+    const useCasePrev = e.target.closest('.use-case-prev');
+    if (useCasePrev) {
+        const sku = useCasePrev.dataset.sku;
+        navigateUseCase(sku, -1);
         e.preventDefault();
         e.stopPropagation();
         return;
     }
     
-    // Check if the clicked element or any parent has the add-to-cart-btn class
-    const addToCartBtn = e.target.closest('.add-to-cart-btn');
-    if (addToCartBtn) {
-        console.log('Add to cart button clicked');
-        const sku = addToCartBtn.dataset.sku;
-        addToCart(sku);
-        e.preventDefault();
-        e.stopPropagation();
-        return;
-    }
-    
-    const useCasesBtn = e.target.closest('.use-cases-btn');
-    if (useCasesBtn) {
-        console.log('Use cases button clicked');
-        const sku = useCasesBtn.dataset.sku;
-        showUseCases(sku);
+    const useCaseNext = e.target.closest('.use-case-next');
+    if (useCaseNext) {
+        const sku = useCaseNext.dataset.sku;
+        navigateUseCase(sku, 1);
         e.preventDefault();
         e.stopPropagation();
         return;
     }
 });
 
-// Cart toggle
-document.addEventListener('click', function(e) {
-    if (e.target.matches('.clear-cart-btn')) {
-        clearCart();
-    }
-    
-    if (e.target.matches('.checkout-btn')) {
-        checkout();
-    }
-});
 
 function initEventDelegation() {
-    console.log('Event delegation already set up');
+    // Event delegation already set up
 }
 
 function initProductCardHoverEffects() {
@@ -494,42 +436,114 @@ function initProductCardHoverEffects() {
     });
 }
 
-// Local Storage Functions
-function saveCartToStorage() {
-    localStorage.setItem('spotlight-cart', JSON.stringify(cart));
+function initUseCaseHoverEffects() {
+    const productImages = document.querySelectorAll('.product-image');
+    
+    productImages.forEach(imageContainer => {
+        const hoverUseCases = imageContainer.querySelector('.hover-use-cases');
+        if (!hoverUseCases) return;
+        
+        const sku = hoverUseCases.dataset.sku;
+        const useCaseImages = getUseCaseImages(sku);
+        
+        if (useCaseImages.length <= 1) return; // No need for navigation if only one image
+        
+        // Store current image index
+        hoverUseCases.currentIndex = 0;
+        
+        // Show/hide hover overlay
+        imageContainer.addEventListener('mouseenter', function() {
+            hoverUseCases.style.display = 'flex';
+        });
+        
+        imageContainer.addEventListener('mouseleave', function() {
+            hoverUseCases.style.display = 'none';
+        });
+        
+        // Prevent hover overlay from hiding when hovering over it
+        hoverUseCases.addEventListener('mouseenter', function() {
+            this.style.display = 'flex';
+        });
+        
+        hoverUseCases.addEventListener('mouseleave', function() {
+            this.style.display = 'none';
+        });
+        
+        // Add click-to-zoom functionality for use case images
+        const useCaseImage = hoverUseCases.querySelector('.use-case-image');
+        if (useCaseImage) {
+            useCaseImage.addEventListener('click', function() {
+                toggleImageZoom(this);
+            });
+        }
+    });
 }
 
-function loadCartFromStorage() {
-    const savedCart = localStorage.getItem('spotlight-cart');
-    if (savedCart) {
-        try {
-            cart = JSON.parse(savedCart);
-            updateCartDisplay();
-        } catch (e) {
-            console.error('Error loading cart from storage:', e);
-        }
+function navigateUseCase(sku, direction) {
+    const hoverUseCases = document.querySelector(`.hover-use-cases[data-sku="${sku}"]`);
+    if (!hoverUseCases) return;
+    
+    const useCaseImages = getUseCaseImages(sku);
+    if (useCaseImages.length <= 1) return;
+    
+    // Update current index
+    hoverUseCases.currentIndex = (hoverUseCases.currentIndex + direction + useCaseImages.length) % useCaseImages.length;
+    
+    // Update image
+    const imageElement = hoverUseCases.querySelector('.use-case-image');
+    const counterElement = hoverUseCases.querySelector('.use-case-counter');
+    
+    if (imageElement) {
+        imageElement.src = useCaseImages[hoverUseCases.currentIndex];
+    }
+    
+    if (counterElement) {
+        counterElement.textContent = `${hoverUseCases.currentIndex + 1} / ${useCaseImages.length}`;
     }
 }
+
+function toggleImageZoom(imageElement) {
+    // Create zoom overlay
+    const zoomOverlay = document.createElement('div');
+    zoomOverlay.className = 'image-zoom-overlay';
+    zoomOverlay.innerHTML = `
+        <div class="image-zoom-container">
+            <img src="${imageElement.src}" alt="${imageElement.alt}" class="zoomed-image">
+            <button class="zoom-close" onclick="closeImageZoom()">&times;</button>
+        </div>
+    `;
+    
+    document.body.appendChild(zoomOverlay);
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Close on overlay click or image click
+    zoomOverlay.addEventListener('click', function(e) {
+        if (e.target === zoomOverlay || e.target.classList.contains('zoomed-image')) {
+            closeImageZoom();
+        }
+    });
+    
+    // Close on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeImageZoom();
+        }
+    });
+}
+
+function closeImageZoom() {
+    const zoomOverlay = document.querySelector('.image-zoom-overlay');
+    if (zoomOverlay) {
+        zoomOverlay.remove();
+        document.body.style.overflow = ''; // Restore scrolling
+    }
+}
+
 
 // Search Functionality
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOMContentLoaded event fired on GitHub Pages');
-    const categories = document.querySelectorAll('.category');
 
 
-    // Product card hover effects - moved to after products are rendered
-    function initProductCardHoverEffects() {
-        const productCards = document.querySelectorAll('.product-card');
-        productCards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-5px)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0)';
-            });
-        });
-    }
 
     // Image error handling
     const images = document.querySelectorAll('img');
@@ -550,12 +564,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialize the application
     function init() {
-        console.log('Initializing application on GitHub Pages');
         
         try {
-            // Load cart from storage
-            loadCartFromStorage();
-        
         // Small delay to ensure DOM is fully ready
         setTimeout(() => {
             
@@ -575,67 +585,27 @@ document.addEventListener('DOMContentLoaded', function() {
     // init(); // Moved to DOMContentLoaded event
 
     
-    // Modal event listeners
-    const modal = document.getElementById('checkoutModal');
-    const closeModalBtn = document.getElementById('closeModal');
-    const cancelBtn = document.getElementById('cancelCheckout');
-    const checkoutForm = document.getElementById('checkoutForm');
     
     // Use Cases Modal event listeners
     const useCasesModal = document.getElementById('useCasesModal');
     const closeUseCasesModalBtn = document.getElementById('closeUseCasesModal');
     
-    // Close modal when clicking X or Cancel
-    closeModalBtn.addEventListener('click', closeModal);
-    cancelBtn.addEventListener('click', closeModal);
     
     // Use Cases Modal event listeners
     closeUseCasesModalBtn.addEventListener('click', closeUseCasesModal);
     
     // Close modal when clicking outside of it
     window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-            closeModal();
-        }
         if (event.target === useCasesModal) {
             closeUseCasesModal();
         }
     });
     
-    // Handle form submission
-    checkoutForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const formData = {
-            institutionName: document.getElementById('institutionName').value,
-            contactName: document.getElementById('contactName').value,
-            emailAddress: document.getElementById('emailAddress').value,
-            phoneNumber: document.getElementById('phoneNumber').value,
-            shippingAddress: document.getElementById('shippingAddress').value,
-            specialInstructions: document.getElementById('specialInstructions').value
-        };
-        
-        // Validate required fields
-        if (!formData.institutionName || !formData.contactName || !formData.emailAddress || !formData.phoneNumber || !formData.shippingAddress) {
-            alert('Please fill in all required fields.');
-            return;
-        }
-        
-        // Disable submit button to prevent double submission
-        const submitBtn = document.getElementById('submitCheckout');
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Sending...';
-        
-        // Send email request
-        sendEmailRequest(formData);
-    });
     
     // Scroll to top functionality
     const scrollToTopBtn = document.getElementById('scrollToTop');
-    const shoppingCart = document.getElementById('shoppingCart');
-    let cartOriginalPosition = null;
     
-    // Show/hide scroll to top button and handle cart sticky behavior
+    // Show/hide scroll to top button
     window.addEventListener('scroll', function() {
         // Scroll to top button
         if (window.pageYOffset > 300) {
@@ -643,8 +613,6 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             scrollToTopBtn.classList.remove('show');
         }
-        
-        // Cart stays in place - no sticky behavior
     });
     
     
@@ -664,171 +632,14 @@ document.addEventListener('DOMContentLoaded', function() {
 // Fallback initialization in case DOMContentLoaded already fired
 if (document.readyState === 'loading') {
     // DOM is still loading, wait for DOMContentLoaded
-    console.log('DOM still loading, waiting for DOMContentLoaded');
 } else {
     // DOM is already loaded, initialize immediately
-    console.log('DOM already loaded, initializing immediately');
     setTimeout(() => {
         init();
     }, 100);
 }
 
-// Save cart to storage before page unload
-window.addEventListener('beforeunload', saveCartToStorage);
 
-// Shopping Cart Functions
-function updateQuantity(sku, change) {
-    const input = document.getElementById(`qty-${sku}`);
-    
-    if (!input) {
-        console.error('Input element not found for SKU:', sku);
-        return;
-    }
-    
-    const currentQty = parseInt(input.value) || 0;
-    const newQty = Math.max(0, currentQty + change);
-    input.value = newQty;
-    
-    // Enable/disable add to cart button
-    const addBtn = input.parentElement.querySelector('.add-to-cart-btn');
-    addBtn.disabled = newQty === 0;
-}
-
-function addToCart(sku) {
-    console.log('addToCart called for SKU:', sku);
-    
-    try {
-        const input = document.getElementById(`qty-${sku}`);
-        if (!input) {
-            console.error('Input element not found for SKU:', sku);
-            return;
-        }
-        
-        const quantity = parseInt(input.value) || 0;
-        
-        if (quantity <= 0) {
-            console.log('Quantity is 0 or less, not adding to cart');
-            return;
-        }
-    
-    const productCard = input.closest('.product-card');
-    const productName = productCard.querySelector('.product-name').textContent;
-    const productSku = productCard.querySelector('.product-sku').textContent;
-    const compatibilityLabel = productCard.querySelector('.compatibility-label').textContent;
-    const productImage = productCard.querySelector('.product-image img').src;
-    
-    if (cart[sku]) {
-        cart[sku].quantity += quantity;
-    } else {
-        cart[sku] = {
-            name: productName,
-            sku: productSku,
-            quantity: quantity,
-            compatibility: compatibilityLabel,
-            image: productImage
-        };
-    }
-    
-    // Reset quantity input
-    input.value = 0;
-    input.parentElement.querySelector('.add-to-cart-btn').disabled = true;
-    
-        updateCartDisplay();
-        saveCartToStorage();
-        showCartNotification(`${quantity} x ${productName} added to cart!`);
-        
-        console.log('Successfully added to cart:', productName, 'Quantity:', quantity);
-    } catch (error) {
-        console.error('Error adding to cart:', error);
-    }
-}
-
-function removeFromCart(sku) {
-    delete cart[sku];
-    updateCartDisplay();
-    saveCartToStorage();
-}
-
-function updateCartQuantity(sku, quantity) {
-    if (quantity <= 0) {
-        removeFromCart(sku);
-    } else {
-        cart[sku].quantity = quantity;
-        updateCartDisplay();
-        saveCartToStorage();
-    }
-}
-
-function updateCartDisplay() {
-    const cartItems = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
-    
-    if (Object.keys(cart).length === 0) {
-        cartItems.innerHTML = '<p class="empty-cart">Your cart is empty</p>';
-        cartTotal.innerHTML = '<strong>Items: 0</strong>';
-        return;
-    }
-    
-    let totalItems = 0;
-    let itemsHtml = '';
-    
-    for (const [sku, item] of Object.entries(cart)) {
-        totalItems += item.quantity;
-        
-        itemsHtml += `
-            <div class="cart-item">
-                <div class="cart-item-image">
-                    <img src="${item.image}" alt="${item.name}" loading="lazy">
-                </div>
-                <div class="cart-item-info">
-                    <div class="cart-item-name">${item.name}</div>
-                    <div class="cart-item-sku">${item.sku}</div>
-                    <div class="cart-item-compatibility">${item.compatibility}</div>
-                </div>
-                <div class="cart-item-controls">
-                    <input type="number" class="cart-item-qty" value="${item.quantity}" min="1" 
-                           onchange="updateCartQuantity('${sku}', parseInt(this.value))">
-                    <button class="cart-item-remove" onclick="removeFromCart('${sku}')">Remove</button>
-                </div>
-            </div>
-        `;
-    }
-    
-    cartItems.innerHTML = itemsHtml;
-    cartTotal.innerHTML = `<strong>Items: ${totalItems}</strong>`;
-}
-
-function clearCart() {
-    cart = {};
-    updateCartDisplay();
-    saveCartToStorage();
-    showCartNotification('Cart cleared!');
-}
-
-function checkout() {
-    if (Object.keys(cart).length === 0) {
-        alert('Your cart is empty!');
-        return;
-    }
-    
-    // Show the checkout modal
-    const modal = document.getElementById('checkoutModal');
-    modal.style.display = 'block';
-    
-    // Populate cart summary in the form
-    populateCartSummary();
-}
-
-function populateCartSummary() {
-    // This function will be called to show cart items in the form
-    // For now, we'll just show the modal
-}
-
-function closeModal() {
-    const modal = document.getElementById('checkoutModal');
-    modal.style.display = 'none';
-    document.getElementById('checkoutForm').reset();
-}
 
 function showUseCases(sku) {
     const useCasesModal = document.getElementById('useCasesModal');
@@ -890,75 +701,4 @@ function closeUseCasesModal() {
     document.getElementById('useCasesModal').style.display = 'none';
 }
 
-function sendEmailRequest(formData) {
-    const totalItems = Object.values(cart).reduce((sum, item) => sum + item.quantity, 0);
-    
-    // Create email subject
-    const subject = `Nutrislice Spotlight Fixture Request`;
-    
-    // Create email body with cart items sorted by quantity and SKU
-    let emailBody = `Nutrislice Spotlight Fixture Request\n\n`;
-    emailBody += `Institution Information:\n`;
-    emailBody += `Institution: ${formData.institutionName}\n`;
-    emailBody += `Contact Name: ${formData.contactName}\n`;
-    emailBody += `Email: ${formData.emailAddress}\n`;
-    emailBody += `Phone: ${formData.phoneNumber}\n`;
-    emailBody += `Shipping Address: ${formData.shippingAddress}\n`;
-    emailBody += `Special Instructions: ${formData.specialInstructions || 'None'}\n\n`;
-    
-    emailBody += `Requested Items (${totalItems} total):\n`;
-    emailBody += `================================\n`;
-    
-    // Sort cart items by quantity (descending) then by SKU (ascending)
-    const sortedItems = Object.entries(cart).sort((a, b) => {
-        // First sort by quantity (descending)
-        if (b[1].quantity !== a[1].quantity) {
-            return b[1].quantity - a[1].quantity;
-        }
-        // Then sort by SKU (ascending)
-        return a[1].sku.localeCompare(b[1].sku);
-    });
-    
-    for (const [sku, item] of sortedItems) {
-        emailBody += `Qty: ${item.quantity} | SKU: ${item.sku}\n`;
-        emailBody += `Item: ${item.name}\n`;
-        emailBody += `Compatibility: ${item.compatibility}\n\n`;
-    }
-    
-    // Create mailto link
-    const mailtoLink = `mailto:hardware@nutrislice.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    alert('Your email client should open with the fixture request. If it doesn\'t, please email hardware@nutrislice.com with your request details.');
-    
-    // Close modal and clear cart
-    closeModal();
-    clearCart();
-}
 
-
-function showCartNotification(message) {
-    // Create a temporary notification
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        left: 20px;
-        background: #28a745;
-        color: white;
-        padding: 15px 20px;
-        border-radius: 5px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-        z-index: 1000;
-        font-weight: 600;
-    `;
-    notification.textContent = message;
-    document.body.appendChild(notification);
-    
-    setTimeout(() => {
-        notification.remove();
-    }, 3000);
-}

@@ -25,24 +25,6 @@
     <div class="main-layout">
         <!-- Main Content Area -->
         <div class="main-content">
-            <!-- Shopping Cart -->
-            <div class="shopping-cart" id="shoppingCart">
-                <div class="cart-header">
-                    <h3>🛒 Fixture Request Cart</h3>
-                    <div class="cart-actions">
-                        <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-                        <button class="checkout-btn" onclick="checkout()">Submit Request</button>
-                    </div>
-                </div>
-                <div class="cart-content" id="cartContent">
-                    <div class="cart-items" id="cartItems">
-                        <p class="empty-cart">Your cart is empty</p>
-                    </div>
-                    <div class="cart-total" id="cartTotal">
-                        <strong>Items: 0</strong>
-                    </div>
-                </div>
-            </div>
 
         <!-- 2.9" Labels (C29ZV White/C29ZB Black) -->
         <div class="category" data-category="29-labels">
@@ -102,45 +84,6 @@
         </div>
     </div>
 
-    <!-- Checkout Form Modal -->
-    <div id="checkoutModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Fixture Request Form</h2>
-                <span class="close" id="closeModal">&times;</span>
-            </div>
-            <form id="checkoutForm">
-                <div class="form-group">
-                    <label for="institutionName">Name of Institution *</label>
-                    <input type="text" id="institutionName" name="institutionName" required>
-                </div>
-                <div class="form-group">
-                    <label for="contactName">Contact Name *</label>
-                    <input type="text" id="contactName" name="contactName" required>
-                </div>
-                <div class="form-group">
-                    <label for="emailAddress">Email Address *</label>
-                    <input type="email" id="emailAddress" name="emailAddress" required>
-                </div>
-                <div class="form-group">
-                    <label for="phoneNumber">Phone Number *</label>
-                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
-                </div>
-                <div class="form-group">
-                    <label for="shippingAddress">Shipping Address *</label>
-                    <textarea id="shippingAddress" name="shippingAddress" rows="3" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="specialInstructions">Special Instructions</label>
-                    <textarea id="specialInstructions" name="specialInstructions" rows="3" placeholder="Any special delivery instructions or notes..."></textarea>
-                </div>
-                <div class="form-actions">
-                    <button type="button" id="cancelCheckout" class="btn-cancel">Cancel</button>
-                    <button type="submit" id="submitCheckout" class="btn-submit">Send Request</button>
-                </div>
-            </form>
-        </div>
-    </div>
 
     <!-- Use Cases Modal -->
     <div id="useCasesModal" class="modal">
