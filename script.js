@@ -7,307 +7,477 @@ const products = [
     {
         name: "Tilted Sleeve Stand for 2.9\" White Labels",
         sku: "79.0014.5",
-        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.5.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 2.9\" Black Labels",
         sku: "79.0014.8",
-        description: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: '75° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZB',
         image: "images/79.0014.8.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Pressure Clamp for 2.9\" White Labels",
         sku: "79.0140.1",
-        description: 'Pressure Clamp Mount - 3.62"W × 1.81"H × 1.00"D',
+        dimensions: 'Pressure Clamp Mount - 3.62"W × 1.81"H × 1.00"D',
         compatibility: 'C29ZV',
         image: "images/79.0140.1.png",
         category: "pressure-clamps",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto glass or plexiglass.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to glass or plexiglass to position labels at the front of the sneezeguard.",
     },
     {
         name: "Wall Holder for 2.9\" White Labels",
         sku: "79.0014.24",
-        description: 'Wall Mount Holder - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: 'Wall Mount Holder - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.24.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A clear plastic channel mount with a flat adhesive-backed base and a curved top lip to cradle a digital screen. Designed for edge-grip screen installation on flat surfaces.",
+        mountingNotes: "Adhesive-mounts on to flat surfaces. Slide screen into the curved channel for a snug hold.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Used to hold and display digital screens in a secure, stationary position, commonly on sneeze guards, counters, or display frames where minimal mounting hardware is desired.",
     },
     {
         name: "Tilted Sleeve Stand for 2.9\" White Labels",
         sku: "79.0014.19",
-        description: '60° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: '60° Tilted Stand - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV',
         image: "images/79.0014.19.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Shelf Rail Mount for 2.9\" White Labels or 2.9\" Black Labels",
         sku: "28.0488.2",
-        description: 'Shelf Rail Mounting System - 1.00"D',
+        dimensions: 'Shelf Rail Mounting System - 1.00"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0488.2.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small, pressure-mounting track that can have a label clipped in for a horizontal upright display. For use with shelving 5 - 10 mm thick (3/16 - 3/8 in). This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto shelving 5 - 10 mm thick (3/16 - 3/8 in). Labels use mounting hardware on their backside to clip into the mount.",
+        benefits: "A retail-like display of labels. Fully recyclable materials. Attach to shelves to position labels at the front of the shelf lip.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Attach to shelves to position labels at the front of the shelf lip.",
     },
     {
         name: "Mounting Rail Universal for 2.9\" White Labels or 2.9\" Black Labels",
         sku: "28.0487.254",
-        description: 'Universal Mounting Rail with Clear Double-Sided Remo Tape - 1.25"D',
+        dimensions: 'Universal Mounting Rail with Clear Double-Sided Remo Tape - 1.25"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.254.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small mounting track that can have a label clipped in for a horizontal upright display. Uses clear double-sided remo tape for adhesion. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Adhesive-mounts using the included clear double-sided remo tape to flat surfaces. Labels use mounting hardware on their backside to clip into the mount. Apply to clean, dry surfaces.",
+        benefits: "A retail-like display of labels. Fully recyclable materials. Attach to shelves or flat surfaces to position labels at the front of shelving or display areas.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Attach to shelves or flat surfaces to position labels at the front of the shelf lip or display areas.",
     },
     {
         name: "Hook Over Rail Mount for 2.9\" White Labels or 2.9\" Black Labels",
         sku: "28.0487.345",
-        description: 'Hook Over Rail Mounting System - 1.25"D',
+        dimensions: 'Hook Over Rail Mounting System - 1.25"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.345.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounting sleeve that attaches to shelving rails.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials. Attaches to rail to position labels at the front of shelving.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to rail to position labels at the front of shelving.",
     },
     {
         name: "Custom Label Holder w/Clips for 2.9\" White Labels or 2.9\" Black Labels",
         sku: "73.0023.4",
-        description: 'Custom Label Holder with Included Clips - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: 'Custom Label Holder with Included Clips - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.4.png",
         category: "29-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A custom label holder with included clips for securing labels. This clear plastic holder provides a secure display solution for labels. This is a clear plastic mount with various material thicknesses.",
+        mountingNotes: "Use the included clips to secure the label into the holder. The holder can be mounted using the provided mounting hardware or adhesive methods.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Secure clip system holds labels firmly in place. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Use in various display applications where secure label attachment is needed. Suitable for counters, shelves, and display areas where labels need to be firmly secured.",
     },
     
     // 4.2" Labels (C42ZV White/C42ZB Black)
     {
         name: "Tilted Sleeve Stand for 4.2\" White Labels",
         sku: "79.0014.20",
-        description: '60° Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
+        dimensions: '60° Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV',
         image: "images/79.0014.20.png",
         category: "42-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 4.2\" White Labels or 4.2\" Black Labels",
         sku: "79.0014.14",
-        description: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
+        dimensions: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.14.png",
         category: "42-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Pressure Clamp for 4.2\" White Labels",
         sku: "79.0140.2",
-        description: 'Pressure Clamp Mount - 5.00"W × 2.50"H × 1.00"D',
+        dimensions: 'Pressure Clamp Mount - 5.00"W × 2.50"H × 1.00"D',
         compatibility: 'C42ZV',
         image: "images/79.0140.2.png",
         category: "pressure-clamps",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto glass or plexiglass.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to glass or plexiglass to position labels at the front of the sneezeguard.",
     },
     {
         name: "Wall Holder for 4.2\" White Labels or 4.2\" Black Labels",
         sku: "79.0014.25",
-        description: 'Wall Mount Holder - 5.00"W × 2.50"H × 2.67"D',
+        dimensions: 'Wall Mount Holder - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV / C42ZB',
         image: "images/79.0014.25.png",
         category: "42-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A clear plastic channel mount with a flat adhesive-backed base and a curved top lip to cradle a digital screen. Designed for edge-grip screen installation on flat surfaces.",
+        mountingNotes: "Adhesive-mounts on to flat surfaces. Slide screen into the curved channel for a snug hold.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Used to hold and display digital screens in a secure, stationary position, commonly on sneeze guards, counters, or display frames where minimal mounting hardware is desired.",
     },
     {
         name: "Tilted Sleeve Stand for 4.2\" White Labels",
         sku: "79.0014.16",
-        description: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
+        dimensions: 'Tilted Stand - 5.00"W × 2.50"H × 2.67"D',
         compatibility: 'C42ZV',
         image: "images/79.0014.16.png",
         category: "42-labels",
-        orientation: "portrait"
+        orientation: "portrait",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     
     // 5.8" Labels (C58ZV White/C58ZB Black)
     {
         name: "Tilted Sleeve Stand for 5.8\" White Labels",
         sku: "79.0014.21",
-        description: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.21.png",
         category: "58-labels",
-        orientation: "portrait"
+        orientation: "portrait",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 5.8\" White Labels",
         sku: "79.0014.22",
-        description: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: '60° Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.22.png",
         category: "58-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 5.8\" White Labels",
         sku: "79.0014.4",
-        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.4.png",
         category: "58-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 5.8\" White Labels",
         sku: "79.0014.6",
-        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.6.png",
         category: "58-labels",
-        orientation: "portrait"
+        orientation: "portrait",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 5.8\" Black Labels",
         sku: "79.0014.12",
-        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.12.png",
         category: "58-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Tilted Sleeve Stand for 5.8\" Black Labels",
         sku: "79.0014.13",
-        description: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Tilted Stand - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.13.png",
         category: "58-labels",
-        orientation: "portrait"
+        orientation: "portrait",
+        description: "A reclined transparent sleeve that holds a label upright from a bent base. The label displays through the transparent material of the holder.",
+        mountingNotes: "Slide the label into the holder, display facing out the full panel of clear plastic.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Props label up at an angle for the best readability at counter height. Fully recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "Behind sneeze guards placed in front of corresponding dishes. In front of sneeze guards on the counter in proximity to corresponding dishes. On top of cases, within eye-level. On display shelves with items. Not recommended for high-heat areas due to possible material warping.",
     },
     {
         name: "Pressure Clamp for 5.8\" White Labels",
         sku: "79.0140.3",
-        description: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
+        dimensions: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
         compatibility: 'C58ZV',
         image: "images/79.0140.3.png",
         category: "pressure-clamps",
-        orientation: "portrait"
+        orientation: "portrait",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto glass or plexiglass.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to glass or plexiglass to position labels at the front of the sneezeguard.",
     },
     {
         name: "Pressure Clamp for 5.8\" White Labels",
         sku: "79.0140.4",
-        description: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
+        dimensions: 'Pressure Clamp Mount - 7.00"W × 3.50"H × 1.00"D',
         compatibility: 'C58ZV',
         image: "images/79.0140.4.png",
         category: "pressure-clamps",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto glass or plexiglass.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to glass or plexiglass to position labels at the front of the sneezeguard.",
     },
     {
         name: "Wall Holder for 5.8\" White Labels",
         sku: "79.0014.27",
-        description: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZV',
         image: "images/79.0014.27.png",
         category: "58-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A clear plastic channel mount with a flat adhesive-backed base and a curved top lip to cradle a digital screen. Designed for edge-grip screen installation on flat surfaces.",
+        mountingNotes: "Adhesive-mounts on to flat surfaces. Slide screen into the curved channel for a snug hold.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Used to hold and display digital screens in a secure, stationary position, commonly on sneeze guards, counters, or display frames where minimal mounting hardware is desired.",
     },
     {
         name: "Wall Holder for 5.8\" Black Labels",
         sku: "79.0014.26",
-        description: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
+        dimensions: 'Wall Mount Holder - 7.00"W × 3.50"H × 3.15"D',
         compatibility: 'C58ZB',
         image: "images/79.0014.26.png",
         category: "58-labels",
-        orientation: "landscape"
+        orientation: "landscape",
+        description: "A clear plastic channel mount with a flat adhesive-backed base and a curved top lip to cradle a digital screen. Designed for edge-grip screen installation on flat surfaces.",
+        mountingNotes: "Adhesive-mounts on to flat surfaces. Slide screen into the curved channel for a snug hold.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Used to hold and display digital screens in a secure, stationary position, commonly on sneeze guards, counters, or display frames where minimal mounting hardware is desired.",
     },
     
     // 10.2" & 13.3" Labels (C102ZV White/C133ZV White)
     {
         name: "Tilted Mount Stand for 10.2\" & 13.3\" White Labels",
         sku: "79.0014.18",
-        description: 'Tilted Mount Stand - 10.00"W × 8.88"H × 4.00"D (65°)',
+        dimensions: 'Tilted Mount Stand - 10.00"W × 8.88"H × 4.00"D (75°)',
         compatibility: 'C102ZV / C133ZV',
         image: "images/79.0014.18.png",
         category: "102-133-labels",
-        orientation: "portrait-landscape"
+        orientation: "portrait-landscape",
+        description: "A reclined transparent stand that holds a label upright from a bent base. The label is affixed to the front of the stand with screws from the backside. This is a clear acrylic stand with the material thickness of 0.18\"",
+        mountingNotes: "Insert the 2 hex screws from the back of the stand into the backside of the label to affix the label to the front side of the stand.",
+        benefits: "Props label up at an angle for the best readability at counter height. Stand made of recyclable materials.",
+        worksFor: "Catering - tabletop display, Serving Line - flat top sneezeguard.",
+        useCaseExamples: "On the counter in proximity to corresponding items or where to order. On display shelves in proximity to corresponding items.",
     },
     
     // Accessories & Replacement Parts
     {
         name: "Magnetic Holder Universal - Kit",
         sku: "73.0023.3",
-        description: "Magnetic Mounting System - Includes 53.0056.60 Adhesive Plate - 14.75\"W × 14.00\"H × 2.76\"D - Universal Compatibility",
+        dimensions: "Magnetic Mounting System - Includes 53.0056.60 Adhesive Plate - 14.75\"W × 14.00\"H × 2.76\"D - Universal Compatibility",
         compatibility: 'Universal',
         image: "images/73.0023.3.png",
-        category: "other-mounting-fixtures"
+        category: "other-mounting-fixtures",
+        description: "An upright clear label attachment arm with a magnet base facing outward. Made to help labels magnetically attach to magnetic, scratch resistant surfaces. Comes with an adhesive dovetail plate for label attachment to arm. This is a clear plastic and magnet mount with various material thicknesses.",
+        mountingNotes: "Use the included adhesive dovetail plate to attach label to holder in either landscape or portrait orientation. For 5.8in display labels, mount dovetails so the magnets, when attached, are a decent ways apart for the best weight balance.",
+        benefits: "Versatile placement and easy removal of labels on magnetic surfaces. Plastic holder made of recyclable materials.",
+        worksFor: "Magnetic Surfaces",
+        useCaseExamples: "Use to attach labels to a magnetic, scratch resistant surfaces. Ex: Magnetic Poles, magnetic track, etc.",
     },
     {
         name: "Dovetail Adhesive Plate - Only",
         sku: "53.0056.60",
-        description: 'Dovetail Adhesive Plate Only - 5.00"W × 2.50"H × 1.00"D - Replacement Part',
+        dimensions: 'Dovetail Adhesive Plate Only - 5.00"W × 2.50"H × 1.00"D - Replacement Part',
         compatibility: 'Replacement Part',
         image: "images/53.0056.60.png",
-        category: "replacement-parts"
+        category: "replacement-parts",
+        description: "A plastic 1\" x 1\" plate with a dovetail connector on one side, adhesive on the other. For use with attachment hardware requiring a dovetail connector to secure the label. This is a white plastic plate with various material thicknesses.",
+        mountingNotes: "Apply to a label to work with attachment hardware that requires a dovetail connector.",
+        benefits: "Connector allows easy label removal and replacement without moving the mount hardware from place.",
+        worksFor: "Mounting attachment for fixtures with dovetail compatible connections.",
+        useCaseExamples: "Used as a connector to hardware requiring a dovetail connection to affix label hardware.",
     },
     {
         name: "Foam Tape Universal - Only",
         sku: "20.2223.7",
-        description: "Double-Sided Foam Tape Only - Universal Mounting Solution",
+        dimensions: "Double-Sided Foam Tape Only - Universal Mounting Solution - .06\" thickness",
         compatibility: 'Universal',
         image: "images/Foam Tape - DBL Sided.png",
-        category: "other-mounting-fixtures"
+        category: "other-mounting-fixtures",
+        description: "High quality double-sided foam adhesive tape for strong adhesion to many surfaces or to secure label position in holders. Can be removed without leaving residue on surfaces. This is a white foam tape with the material thickness of .06\"",
+        mountingNotes: "Apply to clean, dry surfaces. Should not be used for applications that will need to frequently be removed.",
+        benefits: "Leaves no residue behind when removed. Strong, temperature resistant adhesion. Versatile to allow the attachment of labels to many surfaces. Foam provides a padded buffer between surfaces.",
+        worksFor: "Adhering to surfaces",
+        useCaseExamples: "To adhere directly to surfaces for label display, such as glass panes or other smooth surfaces. EX: Sneezeguards, glass doors, etc. Use to secure labels within other holder hardware. Use to secure label stands to the surfaces they are displaying on to prevent them from getting knocked over or lifted easily.",
     },
     {
         name: "Universal Rail with foam tape",
         sku: "28.0487.248",
-        description: "Universal Mounting Rail with Pre-Applied Foam Tape - 1.25\"D - Universal Compatibility",
+        dimensions: "Universal Mounting Rail with Pre-Applied Foam Tape - 1.25\"D (45\" long) - Universal Compatibility",
         compatibility: 'C29ZV / C29ZB',
         image: "images/28.0487.248.png",
-        category: "other-mounting-fixtures"
+        category: "other-mounting-fixtures",
+        description: "Universal Rail with foam tape (45\" long).",
+        mountingNotes: "Adhesive-mounts on to flat surfaces.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Shelved coolers",
+        useCaseExamples: "Used to hold and display digital screens in a secure, stationary position, commonly on sneeze guards, counters, or display frames where minimal mounting hardware is desired.",
     },
     {
         name: "Hinge Pressure Clamp - Kit",
         sku: "73.0023.1",
-        description: "Hinge Pressure Clamp with Included 53.0056.60 Adhesive Plate - 14.75\"W × 14.00\"H × 2.76\"D - Multi-Size Compatibility (2x Recommended)",
+        dimensions: "Hinge Pressure Clamp with Included 53.0056.60 Adhesive Plate - 14.75\"W × 14.00\"H × 2.76\"D - Multi-Size Compatibility (2x Recommended)",
         compatibility: 'C29ZV / C29ZB, C42ZV / C42ZB, and C58ZV / C58ZB - 2x recommended',
         image: "images/73.0023.1.png",
-        category: "pressure-clamps"
+        category: "pressure-clamps",
+        description: "A pressure clamp with an adjustable hinge joint that props up the label. The clamp can accommodate thicknesses up to 20mm (3/4 in). Comes with an adhesive dovetail plate for label attachment. This is a clear plastic clamp with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto panels of material with thicknesses up to 20 mm (3/4in). Use the included adhesive dovetail plate to attach label to holder in either landscape or portrait orientation.",
+        benefits: "Articulates to hold the label in a custom position: slanted, upright, horizontal, etc. Accommodates thick materials for creative placement. Connector allows easy label removal and replacement without moving the panel clamp. Fully recyclable materials.",
+        worksFor: "Serving Line - slanted sneezeguard, Serving Line - vertical sneezeguard",
+        useCaseExamples: "Clamp on sneeze guards, crates, containers, shelves, and more.",
     },
     {
         name: "Hinge Pressure Clamp - Only",
         sku: "53.0056.9",
-        description: "Hinge Pressure Clamp Only - 14.75\"W × 14.00\"H × 2.76\"D - Replacement Part - Universal Compatibility",
+        dimensions: 'Hinge Pressure Clamp Only - 14.75"W × 14.00"H × 2.76"D - Replacement Part',
         compatibility: 'Replacement Part',
         image: "images/73.0023.1.png",
-        category: "replacement-parts"
+        category: "replacement-parts",
+        description: "Replacement hinge clamp for the adjustable pressure clamp assembly. Provides the articulated clamp mechanism without the adhesive dovetail plate.",
+        mountingNotes: "Install as a direct replacement on compatible hinge pressure clamp kits. Pressure-mount onto panels up to 20 mm (3/4 in) thick; attach the label using the existing adhesive dovetail plate from your kit.",
+        benefits: "Restores smooth articulation (slanted, upright, horizontal) without buying a full kit. Durable construction; recyclable where facilities exist.",
+        worksFor: "Replacement for hinge pressure clamp assemblies",
+        useCaseExamples: "Swap in to replace worn or damaged hinge clamps on sneeze guards, crates, containers or shelving installs."
     },
     {
         name: "Pressure Clamp - Kit",
         sku: "73.0023.2",
-        description: 'Pressure Clamp with Included 53.0056.60 Adhesive Plate - 3.62"W × 1.81"H × 2.36"D',
+        dimensions: 'Pressure Clamp with Included 53.0056.60 Adhesive Plate - 3.62"W × 1.81"H × 2.36"D',
         compatibility: 'C29ZV / C29ZB',
         image: "images/73.0023.2.png",
-        category: "pressure-clamps"
+        category: "pressure-clamps",
+        description: "A small, pressure-mounting sleeve that can have a label inserted for a horizontal upright display. Comes with an adhesive dovetail plate for label attachment. This is a clear PVC mount with various material thicknesses.",
+        mountingNotes: "Pressure-mounts onto glass or plexiglass. Use the included adhesive dovetail plate to attach label to holder in either landscape or portrait orientation.",
+        benefits: "Label is enclosed in a plastic sleeve, making it easier to wipe clean. Connector allows easy label removal and replacement without moving the clamp. Fully recyclable materials.",
+        worksFor: "Retail, Convenience store, Restaurant",
+        useCaseExamples: "Attaches to glass or plexiglass to position labels at the front of the sneezeguard. Use the included dovetail plate for secure label attachment.",
     },
     {
         name: "Pressure Clamp - Only",
         sku: "53.0056.23",
-        description: "Pressure Clamp Only - 3.62\"W × 1.81\"H × 2.36\"D - Replacement Part - Universal Compatibility",
+        dimensions: 'Pressure Clamp Only - 3.62"W × 1.81"H × 2.36"D - Replacement Part',
         compatibility: 'Replacement Part',
         image: "images/73.0023.2.png",
-        category: "replacement-parts"
+        category: "replacement-parts",
+        description: "Replacement clamp for the pressure clamp mounting system. Use to replace damaged or worn clamps to restore mounting function.",
+        mountingNotes: "Install in place of the original clamp on compatible pressure clamp hardware. Ensure surfaces are clean before reattaching to glass or plexiglass.",
+        benefits: "Restores reliable clamping without purchasing a full kit. Durable materials; recyclable where facilities exist.",
+        worksFor: "Replacement for pressure clamp assemblies",
+        useCaseExamples: "Swap in to replace cracked or loose clamps in existing pressure clamp installs."
     },
     {
         name: "Battery Pack",
         sku: "70.0006.6",
-        description: '4x CR2430 Battery Pack - Power Supply for 5.8", 10.2" & 13.3" Labels',
+        dimensions: 'Battery Pack — 4 × CR2430 cells',
         compatibility: '5.8", 10.2" & 13.3" Labels',
         image: "images/70.0006.6.png",
-        category: "replacement-parts"
+        category: "replacement-parts",
+        description: "Four CR2430 coin cells that provide power for larger display labels.",
+        mountingNotes: "Insert cells observing polarity into the label battery tray. Dispose of used cells responsibly.",
+        benefits: "Reliable, field-replaceable power source; no cords required.",
+        worksFor: "5.8\", 10.2\" & 13.3\" display labels",
+        useCaseExamples: "Use to replace depleted batteries during maintenance or to provision spare sets for deployments."
     }
 ];
 
@@ -349,11 +519,26 @@ function renderProductCard(product) {
                 ` : ''}
             </div>
             <div class="product-info">
-                <div class="product-name">${product.name}</div>
-                <div class="product-sku">SKU: ${product.sku}</div>
-                ${orientationTag ? `<div class="orientation-container">${orientationTag}</div>` : ''}
-                <div class="product-description">${product.description}</div>
-                <div class="compatibility-label">Compatible: ${product.compatibility}</div>
+                <div class="product-info-basic">
+                    <div class="product-name">${product.name}</div>
+                    <div class="product-sku">SKU: ${product.sku}</div>
+                    ${orientationTag ? `<div class="orientation-container">${orientationTag}</div>` : ''}
+                    ${!product.dimensions && product.description ? `<div class="product-description">${product.description}</div>` : ''}
+                    <div class="compatibility-label">Compatible: ${product.compatibility}</div>
+                </div>
+                ${(product.description || product.mountingNotes || product.benefits || product.worksFor || product.useCaseExamples) ? `
+                    <button class="details-toggle" data-sku="${product.sku}">More details</button>
+                    <div class="details-panel" id="details-${product.sku}" hidden>
+                        <div class="hover-details-content">
+                            ${product.dimensions ? `<div class="product-dimensions">${product.dimensions}</div>` : ''}
+                            ${product.description && product.dimensions ? `<div class="product-detailed-description">${product.description}</div>` : ''}
+                            ${product.mountingNotes ? `<div class="product-section"><strong>Mounting Notes:</strong> ${product.mountingNotes}</div>` : ''}
+                            ${product.benefits ? `<div class="product-section"><strong>Benefits:</strong> ${product.benefits}</div>` : ''}
+                            ${product.worksFor ? `<div class="product-section"><strong>Works For:</strong> ${product.worksFor}</div>` : ''}
+                            ${product.useCaseExamples ? `<div class="product-section"><strong>Use Case Examples:</strong> ${product.useCaseExamples}</div>` : ''}
+                        </div>
+                    </div>
+                ` : ''}
             </div>
         </div>
     `;
@@ -412,6 +597,26 @@ document.addEventListener('click', function(e) {
     if (useCaseNext) {
         const sku = useCaseNext.dataset.sku;
         navigateUseCase(sku, 1);
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+    }
+
+    // Toggle product details panel
+    const detailsToggle = e.target.closest('.details-toggle');
+    if (detailsToggle) {
+        const sku = detailsToggle.dataset.sku;
+        const panel = document.getElementById(`details-${sku}`);
+        if (panel) {
+            const isHidden = panel.hasAttribute('hidden');
+            if (isHidden) {
+                panel.removeAttribute('hidden');
+                detailsToggle.textContent = 'Hide details';
+            } else {
+                panel.setAttribute('hidden', '');
+                detailsToggle.textContent = 'More details';
+            }
+        }
         e.preventDefault();
         e.stopPropagation();
         return;
