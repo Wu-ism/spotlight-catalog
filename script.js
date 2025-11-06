@@ -602,21 +602,11 @@ document.addEventListener('click', function(e) {
         return;
     }
 
-    // Toggle product details panel
+    // Show product details modal
     const detailsToggle = e.target.closest('.details-toggle');
     if (detailsToggle) {
         const sku = detailsToggle.dataset.sku;
-        const panel = document.getElementById(`details-${sku}`);
-        if (panel) {
-            const isHidden = panel.hasAttribute('hidden');
-            if (isHidden) {
-                panel.removeAttribute('hidden');
-                detailsToggle.textContent = 'Hide details';
-            } else {
-                panel.setAttribute('hidden', '');
-                detailsToggle.textContent = 'More details';
-            }
-        }
+        showProductDetails(sku);
         e.preventDefault();
         e.stopPropagation();
         return;
@@ -799,10 +789,21 @@ document.addEventListener('DOMContentLoaded', function() {
     // Use Cases Modal event listeners
     closeUseCasesModalBtn.addEventListener('click', closeUseCasesModal);
     
-    // Close modal when clicking outside of it
+    // Product Details Modal event listeners
+    const productDetailsModal = document.getElementById('productDetailsModal');
+    const closeProductDetailsModalBtn = document.getElementById('closeProductDetailsModal');
+    
+    if (closeProductDetailsModalBtn) {
+        closeProductDetailsModalBtn.addEventListener('click', closeProductDetailsModal);
+    }
+    
+    // Close modals when clicking outside of them
     window.addEventListener('click', function(event) {
         if (event.target === useCasesModal) {
             closeUseCasesModal();
+        }
+        if (event.target === productDetailsModal) {
+            closeProductDetailsModal();
         }
     });
     
@@ -904,6 +905,53 @@ function getUseCaseImages(sku) {
 
 function closeUseCasesModal() {
     document.getElementById('useCasesModal').style.display = 'none';
+}
+
+function showProductDetails(sku) {
+    // Find the product by SKU
+    const product = products.find(p => p.sku === sku);
+    if (!product) return;
+    
+    const modal = document.getElementById('productDetailsModal');
+    const titleElement = document.getElementById('productDetailsTitle');
+    const contentElement = document.getElementById('productDetailsContent');
+    
+    // Set the product name in the modal header
+    titleElement.textContent = product.name;
+    
+    // Build the details content
+    let detailsHtml = '';
+    
+    if (product.dimensions) {
+        detailsHtml += `<div class="product-dimensions">${product.dimensions}</div>`;
+    }
+    
+    if (product.description) {
+        detailsHtml += `<div class="product-detailed-description">${product.description}</div>`;
+    }
+    
+    if (product.mountingNotes) {
+        detailsHtml += `<div class="product-section"><strong>Mounting Notes:</strong> ${product.mountingNotes}</div>`;
+    }
+    
+    if (product.benefits) {
+        detailsHtml += `<div class="product-section"><strong>Benefits:</strong> ${product.benefits}</div>`;
+    }
+    
+    if (product.worksFor) {
+        detailsHtml += `<div class="product-section"><strong>Works For:</strong> ${product.worksFor}</div>`;
+    }
+    
+    if (product.useCaseExamples) {
+        detailsHtml += `<div class="product-section"><strong>Use Case Examples:</strong> ${product.useCaseExamples}</div>`;
+    }
+    
+    contentElement.innerHTML = detailsHtml;
+    modal.style.display = 'block';
+}
+
+function closeProductDetailsModal() {
+    document.getElementById('productDetailsModal').style.display = 'none';
 }
 
 
