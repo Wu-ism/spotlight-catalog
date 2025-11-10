@@ -641,7 +641,7 @@ function initUseCaseHoverEffects() {
         const sku = hoverUseCases.dataset.sku;
         const useCaseImages = getUseCaseImages(sku);
         
-        if (useCaseImages.length <= 1) return; // No need for navigation if only one image
+        if (useCaseImages.length === 0) return; // No use case images at all
         
         // Store current image index
         hoverUseCases.currentIndex = 0;
@@ -668,8 +668,16 @@ function initUseCaseHoverEffects() {
         const useCaseImage = hoverUseCases.querySelector('.use-case-image');
         if (useCaseImage) {
             useCaseImage.addEventListener('click', function() {
-                toggleImageZoom(this);
+                toggleImageZoom(this, sku, hoverUseCases.currentIndex);
             });
+        }
+        
+        // Hide navigation if only one image
+        if (useCaseImages.length <= 1) {
+            const navigation = hoverUseCases.querySelector('.use-case-navigation');
+            if (navigation) {
+                navigation.style.display = 'none';
+            }
         }
     });
 }
@@ -697,38 +705,108 @@ function navigateUseCase(sku, direction) {
     }
 }
 
-function toggleImageZoom(imageElement) {
+function toggleImageZoom(imageElement, sku, currentIndex) {
+    // Get use case images for this SKU
+    const useCaseImages = getUseCaseImages(sku);
+    const hasMultipleImages = useCaseImages.length > 1;
+    
+    // Determine if this is a use case image (has SKU and multiple images)
+    const isUseCaseImage = sku && hasMultipleImages;
+    
     // Create zoom overlay
     const zoomOverlay = document.createElement('div');
     zoomOverlay.className = 'image-zoom-overlay';
+    
+    // Store navigation data on the overlay
+    if (isUseCaseImage) {
+        zoomOverlay.dataset.sku = sku;
+        zoomOverlay.currentIndex = currentIndex || 0;
+    }
+    
+    let navigationHtml = '';
+    if (isUseCaseImage) {
+        navigationHtml = `
+            <button class="zoom-nav zoom-nav-prev" onclick="navigateZoomImage(-1)">‹</button>
+            <button class="zoom-nav zoom-nav-next" onclick="navigateZoomImage(1)">›</button>
+            <div class="zoom-counter">${(zoomOverlay.currentIndex + 1)} / ${useCaseImages.length}</div>
+        `;
+    }
+    
     zoomOverlay.innerHTML = `
         <div class="image-zoom-container">
             <img src="${imageElement.src}" alt="${imageElement.alt}" class="zoomed-image">
             <button class="zoom-close" onclick="closeImageZoom()">&times;</button>
+            ${navigationHtml}
         </div>
     `;
     
     document.body.appendChild(zoomOverlay);
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
     
-    // Close on overlay click or image click
+    // Close on overlay click (but not on image or navigation buttons)
     zoomOverlay.addEventListener('click', function(e) {
-        if (e.target === zoomOverlay || e.target.classList.contains('zoomed-image')) {
+        if (e.target === zoomOverlay) {
             closeImageZoom();
         }
     });
     
-    // Close on escape key
-    document.addEventListener('keydown', function(e) {
+    // Prevent clicks on image and navigation from closing overlay
+    const zoomContainer = zoomOverlay.querySelector('.image-zoom-container');
+    if (zoomContainer) {
+        zoomContainer.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+    
+    // Close on escape key and handle keyboard navigation
+    const keyHandler = function(e) {
         if (e.key === 'Escape') {
             closeImageZoom();
+        } else if (isUseCaseImage) {
+            if (e.key === 'ArrowLeft') {
+                navigateZoomImage(-1);
+            } else if (e.key === 'ArrowRight') {
+                navigateZoomImage(1);
+            }
         }
-    });
+    };
+    document.addEventListener('keydown', keyHandler);
+    
+    // Store handler reference for cleanup
+    zoomOverlay._keyHandler = keyHandler;
+}
+
+function navigateZoomImage(direction) {
+    const zoomOverlay = document.querySelector('.image-zoom-overlay');
+    if (!zoomOverlay || !zoomOverlay.dataset.sku) return;
+    
+    const sku = zoomOverlay.dataset.sku;
+    const useCaseImages = getUseCaseImages(sku);
+    if (useCaseImages.length <= 1) return;
+    
+    // Update current index
+    zoomOverlay.currentIndex = (zoomOverlay.currentIndex + direction + useCaseImages.length) % useCaseImages.length;
+    
+    // Update image
+    const imageElement = zoomOverlay.querySelector('.zoomed-image');
+    const counterElement = zoomOverlay.querySelector('.zoom-counter');
+    
+    if (imageElement) {
+        imageElement.src = useCaseImages[zoomOverlay.currentIndex];
+    }
+    
+    if (counterElement) {
+        counterElement.textContent = `${zoomOverlay.currentIndex + 1} / ${useCaseImages.length}`;
+    }
 }
 
 function closeImageZoom() {
     const zoomOverlay = document.querySelector('.image-zoom-overlay');
     if (zoomOverlay) {
+        // Remove keyboard event handler
+        if (zoomOverlay._keyHandler) {
+            document.removeEventListener('keydown', zoomOverlay._keyHandler);
+        }
         zoomOverlay.remove();
         document.body.style.overflow = ''; // Restore scrolling
     }
@@ -895,8 +973,7 @@ function getUseCaseImages(sku) {
             'images/use-case/79.0014.5-use-case (9).jpg'
         ],
         '79.0014.6': [
-            'images/use-case/79.0014.6-use-case (2).jpg',
-            'images/use-case/79.0014.6-use-case (3).jpg'
+            'images/use-case/79.0014.6-use-case (1).jpg'
         ]
     };
     

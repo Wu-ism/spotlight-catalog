@@ -459,6 +459,26 @@ body {
         height: 35px;
         font-size: 20px;
     }
+    
+    .zoom-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .zoom-nav-prev {
+        left: 10px;
+    }
+    
+    .zoom-nav-next {
+        right: 10px;
+    }
+    
+    .zoom-counter {
+        bottom: -40px;
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 }
 
 /* Compatibility Labels */
@@ -727,6 +747,55 @@ mark {
 .zoom-close:hover {
     background: var(--secondary-cyan);
     transform: scale(1.1);
+}
+
+/* Zoom Navigation Arrows */
+.zoom-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-purple);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10001;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.zoom-nav:hover {
+    background: var(--secondary-cyan);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.zoom-nav-prev {
+    left: 20px;
+}
+
+.zoom-nav-next {
+    right: 20px;
+}
+
+.zoom-counter {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 600;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 20px;
+    z-index: 10001;
 }
 
 @keyframes zoomIn {
